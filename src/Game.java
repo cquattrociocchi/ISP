@@ -15,7 +15,11 @@ public class Game {
 
     public void start() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Text Adventure Game!");
+        System.out.println("You stand at the edge of the parapet of Basgiath War College, the wind rising from the canyon below like a warning.\n" + //
+                        "They told you this place would break you—that only the strongest survive the Riders Quadrant. Looking ahead, at the narrow parapet stretching over open air, you begin to understand why.\n" + //
+                        "Behind you lies the life you knew. Ahead, dragons, death, and a chance at something greater.\n" + //
+                        "A bell tolls in the distance.\n" + //
+                        "It’s time to begin.");
         Room currentRoom = rooms.get(player.getCurrentRoomId());
         System.out.println(currentRoom.getLongDescription());
 

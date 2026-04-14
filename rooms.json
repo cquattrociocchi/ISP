@@ -1,23 +1,129 @@
 {
-    "entrance": {
-      "name": "Entrance Hall",
-      "description": "You are in a grand entrance hall. A door leads north.",
+    "parapet_entrance": {
+      "name": "Parapet Entrance",
+      "description": "You are at the entrance to the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.",
       "exits": {
-        "north": "library"
+        "north": "turret", 
+        "south": "parapet1"
       },
       "items": [
         {
-          "id": "key1",
-          "name": "Key",
-          "description": "A small rusty key."
+          "id": "boot",
+          "name": "Left Rider Boot",
+          "description": " "
         }
       ]
     },
-    "library": {
-      "name": "Library",
-      "description": "Books line the walls. It's quiet.",
+
+    "parapet1": {
+      "name": "Parapet",
+      "description": "You are on the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.",
       "exits": {
-        "south": "entrance"
+        "north": "parapet_entrance", 
+        "south": "parapet2"
+      },
+      "items": []
+    },
+
+    "parapet2": {
+      "name": "Parapet",
+      "description": "You are on the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.\nThe parapet leads to an opening in the eight-foot wall of the Rider's Quadrant in the distance.",
+      "exits": {
+        "north": "parapet1", 
+        "south": "parapet3"
+      },
+      "items": []
+    },
+
+    "parapet3": {
+      "name": "Parapet",
+      "description": "You are on the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.\nThe eight-foot wall of the Rider's Quadrant looms ahead of you, and the opening for the parapet is close now.",
+      "exits": {
+        "north": "parapet2", 
+        "south": "parapet4"
+      },
+      "items": []
+    },
+
+    "parapet4": {
+      "name": "Parapet",
+      "description": "You are on the stretch of the parapet within the walls of the Rider's Quadrant. The exit to the courtyard is within reach.",
+      "exits": {
+        "north": "parapet3", 
+        "south": "fourth_wing"
+      },
+      "items": []
+    },
+
+    "fourth_wing": {
+      "name": "Courtyard",
+      "description": " ",
+      "exits": {
+        "northeast": "parapet4",
+        "north": "dorm_stairwell",
+        "west": "dragon_rotunda",
+        "south": "third_wing"
+      },
+      "items": []
+    },
+
+    "third_wing": {
+      "name": "Courtyard",
+      "description": " ",
+      "exits": {
+        "north": "fourth_wing",
+        "south": "second_wing",
+        "west": "dragon_rotunda"
+      },
+      "items": []
+    },
+
+    "second_wing": {
+      "name": "Courtyard",
+      "description": " ",
+      "exits": {
+        "north": "third_wing",
+        "south": "first_wing",
+        "northwest": "dragon_rotunda"
+      },
+      "items": []
+    },
+
+    "first_wing": {
+      "name": "Courtyard",
+      "description": " ",
+      "exits": {
+        "north": "second_wing",
+        "northwest": "dragon_rotunda"
+      },
+      "items": []
+    },
+
+    "dorm_stairwell": {
+      "name": "Dorm Stairwell",
+      "description": " ",
+      "exits": {
+        "south": "fourth_wing",
+        "southwest": "dragon_rotunda"
+      },
+      "items": []
+    },
+
+    "dragon_rotunda": {
+      "name": "Dragon Rotunda",
+      "description": " ",
+      "exits": {
+        "northeast":"dorm_stairwell",
+        "east": "fourth_wing"
+      },
+      "items": []
+    },
+
+    "turret": {
+      "name": "Turret",
+      "description": " ",
+      "exits": {
+        "south": "parapet_entrance"
       },
       "items": []
     }
