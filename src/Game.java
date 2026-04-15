@@ -34,4 +34,6 @@ public class Game {
             commandParser.parse(input, player, rooms);
         }
     }
+
+    //test
 }

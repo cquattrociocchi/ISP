@@ -10,12 +10,7 @@
         {
           "id": "boot",
           "name": "Left Rider Boot",
-          "description": " "
-        },
-        {
-          "id": "ring",
-          "name": "Ring",
-          "description": " "
+          "description": "A rider boot, with dark leather, sturdy with grip on the bottom."
         }
       ]
     },
@@ -62,7 +57,7 @@
 
     "fourth_wing": {
       "name": "Courtyard",
-      "description": " ",
+      "description": "You stand amoung the Fourth Wing formation. The stone beneath your boots is cracked, and a couple riders linger in small groups, their eyes sharp, and their hands near their weapons.",
       "exits": {
         "northeast": "parapet4",
         "north": "dorm_stairwell",
@@ -74,7 +69,7 @@
 
     "third_wing": {
       "name": "Courtyard",
-      "description": " ",
+      "description": "You stand among the Third Wing formation. The noise is quieter, and controlled, with riders practicing drills and maneuvers.",
       "exits": {
         "north": "fourth_wing",
         "south": "second_wing",
@@ -85,7 +80,7 @@
 
     "second_wing": {
       "name": "Courtyard",
-      "description": " ",
+      "description": "You step into the Second Wing formation. This space is humming with activity, laughter and arguments in the air.",
       "exits": {
         "north": "third_wing",
         "south": "first_wing",
@@ -96,7 +91,7 @@
 
     "first_wing": {
       "name": "Courtyard",
-      "description": " ",
+      "description": "You stand among the First Wing formation. There is intentional quiet, with riders having conversations in low tones.",
       "exits": {
         "north": "second_wing",
         "northwest": "dragon_rotunda"
@@ -106,31 +101,48 @@
 
     "dorm_stairwell": {
       "name": "Dorm Stairwell",
-      "description": " ",
+      "description": "You are in a narrow dorm stairwell. The stone steps curve tightly upward, and the light is dim. Every sound-your breathing, your movement- echoes throughout the chamber.",
       "exits": {
         "south": "fourth_wing",
         "southwest": "dragon_rotunda"
       },
-      "items": []
+      "items": [
+        {
+          "id": "lantern",
+          "name": "A Small Lantern",
+          "description": "A glowing ember burns in the center of the lantern, casting a warm light around it."
+        }
+      ]
     },
 
     "dragon_rotunda": {
       "name": "Dragon Rotunda",
-      "description": " ",
+      "description": "You stand in middle of the chamber, which stretches high above you, its walls marked with shadows and scars. The air is warm, heavy, and even in the stillness, the space feels alive.",
       "exits": {
         "northeast":"dorm_stairwell",
         "east": "fourth_wing"
       },
-      "items": []
+      "items": [
+        {
+          "id": "riding gloves",
+          "name": "A Pair of Riding Gloves",
+          "description": "A pair of sturdy riding gloves, worn smooth by use."
+        }
+      ]
     },
 
     "turret": {
-      "name": "Turret",
-      "description": " ",
+      "name": "Turret staircase",
+      "description": "You are the top of a stone turret, with the entire college spread out below you, distance and small. Wind pulls at your clothes, sharp and unrelenting.",
       "exits": {
         "south": "parapet_entrance"
       },
-      "items": []
+      "items": [
+      ]
     }
+    // hello
   }
+
+
+ 
   
