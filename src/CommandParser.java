@@ -3,7 +3,7 @@ import java.util.Map;
 public class CommandParser {
     public void parse(String input, Player player, Map<String, Room> rooms) {
         String[] words = input.trim().toLowerCase().split("\\s+");
-        if (words.length == 0) {
+        if (words[0].isEmpty()) {
             System.out.println("Please enter a command.");
             return;
         }
@@ -47,7 +47,7 @@ public class CommandParser {
                 if (words.length < 2) {
                     System.out.println("Take what?");
                 } else {
-                    String itemName = words[1];
+                    String itemName = input.substring(input.indexOf(" ") + 1);
                     Room room = rooms.get(player.getCurrentRoomId());
                     Item itemToTake = null;
                     for (Item item : room.getItems()) {

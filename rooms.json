@@ -11,6 +11,11 @@
           "id": "boot",
           "name": "Left Rider Boot",
           "description": " "
+        },
+        {
+          "id": "ring",
+          "name": "Ring",
+          "description": " "
         }
       ]
     },

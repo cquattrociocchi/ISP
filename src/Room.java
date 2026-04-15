@@ -47,6 +47,7 @@ public class Room {
     public String getLongDescription() {
         StringBuilder sb = new StringBuilder();
         sb.append(name).append("\n");
+        System.out.println();
         sb.append(description).append("\n");
 
         if (!items.isEmpty()) {
