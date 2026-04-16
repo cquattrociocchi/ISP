@@ -94,7 +94,8 @@
       "description": "You stand among the First Wing formation. There is intentional quiet, with riders having conversations in low tones.",
       "exits": {
         "north": "second_wing",
-        "northwest": "dragon_rotunda"
+        "northwest": "dragon_rotunda",
+        "west": "flight_field"
       },
       "items": []
     },
@@ -120,7 +121,9 @@
       "description": "You stand in middle of the chamber, which stretches high above you, its walls marked with shadows and scars. The air is warm, heavy, and even in the stillness, the space feels alive.",
       "exits": {
         "northeast":"dorm_stairwell",
-        "east": "fourth_wing"
+        "east": "fourth_wing",
+        "south": "flight_field",
+        "southwest": "sparring_gym"
       },
       "items": [
         {
@@ -139,8 +142,56 @@
       },
       "items": [
       ]
+    },
+
+    "flight_field": {
+      "name": "Flight Field",
+      "description":"You are outside. ... []",
+      "exits": {
+        "south": "threshing_grounds",
+        "east": "first_wing",
+        "northwest": "sparring_gym",
+        "north": "dragon_rotunda"
+      },
+      "items": [
+        {
+          "id": "book of riders",
+          "name": "Book of Riders",
+          "description": "roll-keeper's Book of Riders where bonds between dragon and rider are recorded."
+        }
+      ]
+    },
+
+    "threshing_grounds": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "north": "flight_field"
+      }
+    },
+
+    "sparring_gym": {
+      "name": "Sparring Gym",
+      "description": "",
+      "exits": {
+        "southeast": "flight_field",
+        "northeast": "dragon_rotunda"
+      },
+      "items": [
+        {
+          "id": "combat dagger",
+          "name": "Combat Dagger",
+          "description": "The everyday blade a rider carries. These daggers are used in sparring challenges and various survival situations."
+        },
+        {
+          "id": "poison dagger",
+          "name": "Poison Dagger",
+          "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges."
+        }
+      ]
     }
-    // hello
+
+    
   }
 
 
