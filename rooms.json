@@ -175,7 +175,8 @@
       "description": "",
       "exits": {
         "southeast": "flight_field",
-        "northeast": "dragon_rotunda"
+        "northeast": "dragon_rotunda",
+        "west": "battle_brief"
       },
       "items": [
         {
@@ -189,9 +190,23 @@
           "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges."
         }
       ]
-    }
+    },
 
-    
+    "battle_brief": {
+      "name": "Battle Brief",
+      "description": "A pair of sturdy riding gloves, worn smooth by use.",
+      "exits": {
+        "west": "sparring_gym",
+        "north": "history_classroom"
+      },
+      "items": [
+        {
+          "id": "map",
+          "name": "Map",
+          "description": "You found a paper map of Basgiath College. It will help you with navigation." 
+        }
+      ]
+    }
   }
 
 

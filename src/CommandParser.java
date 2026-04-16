@@ -93,6 +93,15 @@ public class CommandParser {
             default:
                 System.out.println("I don't understand that command.");
                 break;
+            case "map":
+                if (player.getInventory().contains("map")) {
+                    //finish later (map supposed to help(?))
+                    // add, update and display map points (refer to Points class)
+                    // System.out.println("signet in ___ points")
+                } else {
+                    System.out.println("You don't have a map.");
+                }
+            break;
         }
     }
 }
