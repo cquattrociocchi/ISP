@@ -93,6 +93,7 @@ public class CommandParser {
             default:
                 System.out.println("I don't understand that command.");
                 break;
+
             case "map":
                 if (player.getInventory().contains("map")) {
                     //finish later (map supposed to help(?))
@@ -102,6 +103,64 @@ public class CommandParser {
                     System.out.println("You don't have a map.");
                 }
             break;
+
+            case "north":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                String nextRoomId = currentRoom.getExits().get("north");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move north.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+            break;
+
+            case "south":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("south");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move south.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+            break;
+            
+
+            case "east":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("east");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move east.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break;
+
+            case "west":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("west");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move west.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            
+                    
         }
     }
 }
