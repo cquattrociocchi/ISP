@@ -206,7 +206,88 @@
           "description": "You found a paper map of Basgiath College. It will help you with navigation." 
         }
       ]
+    },
+
+    
+  "healer_quadrant": {
+      "name": "Healer Quadrant",
+      "description": "The air smells sharply of herbs and clean linen, with cots lining the room.",
+      "exits": {
+        "east": "turret",
+        "west": "bell_tower"
+        
+      },
+      "items": [
+        {
+          "id": "leigheas serum",
+          "name": "A Leigheas Serum",
+          "description": "A bitter, amber-coloured, medicinal tonic, used to dull pain and treat injuries."
+        }
+      ]
+    },
+    "bell_tower": {
+      "name": "Bell Tower",
+      "description": "You stand within a narrow and vertical space, with a massive bell hanging above.",
+      "exits": {
+        "east": "healer_quadrant",
+        "north": "admin_building"
+      },
+      "items": [
+      ]
+    },
+     "admin_building": {
+      "name": "Admin Building",
+      "description": "",
+      "exits": {
+        "south": "bell_tower",
+        "north": "general_office"
+      },
+      "items": [
+      ]
+    },
+    "general_office": {
+      "name": "General Sorrengail's Office",
+      "description": "",
+      "exits": {
+        "south": "admin_building"
+      },
+      "items": [
+      ]
+    },
+    "infantry_quadrant": {
+      "name": "Infantry Quadrant",
+      "description": "",
+      "exits": {
+        "west": "general_office",
+        "east": "tower_column"
+      },
+      "items": [
+      ]
+    },
+    "tower_column": {
+      "name": "Tower Column",
+      "description": "",
+      "exits": {
+        "west": "infantry_quadrant",
+        "south": "scribe_quadrant"
+      },
+      "items": [
+      ]
+    },
+    "scribe_quadrant": {
+      "name": "Scribe Quadrant",
+      "description": "",
+      "exits": {
+        "south": "turret",
+        "north": "tower_column"
+      },
+      "items": [
+      ]
     }
+
+
+
+
   }
 
 
