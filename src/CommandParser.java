@@ -159,6 +159,98 @@ public class CommandParser {
 
             break; 
 
+
+            case "down":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("down");
+                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You walk down the stairs.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case "up":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("up");
+                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You walk up the stairs.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+            
+            //this does not work because I don't think the target room ID exists but the rooms have the exit - crashes when it runs
+             case "northeast":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("northeast");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move northeast.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case "northwest":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("northwest");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move northwest.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case "southeast":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("southeast");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move southeast.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break;
+
+            case "southwest":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("southwest");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move southwest.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription());
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break;
+
+
+
+                    
+
+            
+
             
                     
         }

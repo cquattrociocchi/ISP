@@ -105,7 +105,8 @@
       "description": "You are in a narrow dorm stairwell. The stone steps curve tightly upward, and the light is dim. Every sound-your breathing, your movement- echoes throughout the chamber.",
       "exits": {
         "south": "fourth_wing",
-        "southwest": "dragon_rotunda"
+        "southwest": "dragon_rotunda",
+        "west": "dorms"
       },
       "items": [
         {
@@ -123,7 +124,9 @@
         "northeast":"dorm_stairwell",
         "east": "fourth_wing",
         "south": "flight_field",
-        "southwest": "sparring_gym"
+        "southwest": "sparring_gym",
+        "southeast": "first_wing",
+        "north": "dorms"
       },
       "items": [
         {
@@ -138,7 +141,9 @@
       "name": "Turret staircase",
       "description": "You are the top of a stone turret, with the entire college spread out below you, distance and small. Wind pulls at your clothes, sharp and unrelenting.",
       "exits": {
-        "south": "parapet_entrance"
+        "south": "parapet_entrance",
+        "north": "scribe_quadrant",
+        "west": "healer_quadrant"
       },
       "items": [
       ]
@@ -237,7 +242,7 @@
     },
      "admin_building": {
       "name": "Admin Building",
-      "description": "",
+      "description": "You enter the administration building, with smooth stone walls and a heavy silence in the air.",
       "exits": {
         "south": "bell_tower",
         "north": "general_office"
@@ -247,7 +252,7 @@
     },
     "general_office": {
       "name": "General Sorrengail's Office",
-      "description": "",
+      "description": "You stand in General Sorrengail's office, a precise and controlled space.",
       "exits": {
         "south": "admin_building"
       },
@@ -256,7 +261,7 @@
     },
     "infantry_quadrant": {
       "name": "Infantry Quadrant",
-      "description": "",
+      "description": "You are in the infantry quadrant, where the steady rhythm of drills and weight of steel empahsizes the physicality of the riders' training.",
       "exits": {
         "west": "general_office",
         "east": "tower_column"
@@ -276,19 +281,132 @@
     },
     "scribe_quadrant": {
       "name": "Scribe Quadrant",
-      "description": "",
+      "description": "You stand at the entrance to the scribe quadrant, where the noise of the college fades into the quiet, studious atmosphere.",
       "exits": {
         "south": "turret",
         "north": "tower_column"
       },
       "items": [
       ]
+    },
+
+     "ravine_tunnel1": {
+      "name": "Ravine Tunnel",
+      "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
+      "exits": {
+        "north": "healer_quadrant",
+        "south": "ravinne_tunnel2"
+      },
+      "items": [
+      ]
+    },
+
+    "ravine_tunnel2": {
+      "name": "Ravine Tunnel",
+      "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
+      "exits": {
+        "north": "ravinne_tunnel1",
+        "south": "ravinne_tunnel3"
+      },
+      "items": [
+      ]
+    },
+
+    "ravine_tunnel3": {
+      "name": "Ravine Tunnel",
+      "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
+      "exits": {
+        "north": "ravinne_tunnel2",
+        "south": "dorms"
+      },
+      "items": [
+      ]
+    },
+
+     "dorms": {
+      "name": "Dormitories",
+      "description": "You are in the riders' dormitories, where narrow rows of beds, scattered belongings, and exhausted voices fill the air.",
+      "exits": {
+        "north": "ravine_tunnel3",
+        "south": "dragon_rotunda", 
+        "east": "dorm_stairwell", 
+        "west": "library"
+      },
+      "items": [
+      ]
+    },
+
+    "library": {
+      "name": "Library",
+      "description": "You are in the library, a quiet space filled with books and the soft rustle of turning pages.",
+      "exits": {
+        "east": "dorms",
+        "south": "commons"
+      },
+      "items": [
+      ]
+    },
+
+    "commons": {
+      "name": "Commons",
+      "description": "You are in the commons, a bustling area where students gather to socialize and study.",
+      "exits": {
+        "north": "library",
+        "south": "gathering_hall"
+      },
+      "items": [
+      ]
+      },
+    
+    "gathering_hall": {
+      "name": "Gathering Hall",
+      "description": "You are in the gathering hall, a large room where students come to relax and interact.",
+      "exits": {
+        "north": "commons",
+        "south": "sparring_gym"
+      },
+      "items": [
+      ]
+      },
+
+      "weapon_tactics": {
+      "name": "Weapon Tactics Classroom",
+      "description": "You are in the weapon tactics classroom, a space where students learn the art of wielding their weapons effectively.",
+      "exits": {
+        "east": "commons",
+        "south": "history_classroom"
+      },
+      "items": [
+      ]
+      },
+
+      "history_classroom": {
+      "name": "History Classroom",
+      "description": "You are in the history classroom, a space where students learn about the past and its impact on the present.",
+      "exits": {
+        "north": "weapon_tactics",
+        "south": "battle_brief"
+      },
+      "items": [
+      ]
+      }
+
+     
+
     }
 
 
 
 
-  }
+
+  
+
+
+
+
+
+
+  
 
 
  
