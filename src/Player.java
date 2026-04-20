@@ -21,8 +21,12 @@ public class Player {
     }
 
     public void setGender(String gender) {
-        if (gender.equals("m") || gender.equals("f"))
+        if (gender.equals("m") || gender.equals("f")) {
             this.gender = gender;
+        }
+        else {
+            System.out.println("I don't understand that command.");
+        }
     }
 
     public String getGender() {
