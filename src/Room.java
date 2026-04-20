@@ -92,7 +92,8 @@ public class Room {
             sb.setLength(sb.length() - 2);
             sb.append(".\n");
         }
-
+        sb.append("You have ").append(Points.getScore());
         return sb.toString();
+
     }
 }

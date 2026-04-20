@@ -1,8 +1,8 @@
 public class Points {
-    private int score;
+    private static int score;
 
     public Points() {
-        this.score = 0;
+        score = 0;
     }
 
     public void addPoints(int amount) {
@@ -12,7 +12,7 @@ public class Points {
     public void deductPoints(int amount) {
         score -= amount;
     }
-    public int getScore() {
+    public static int getScore() {
         return score;
     }
     public void displayScore() {
