@@ -171,7 +171,7 @@
 
     "threshing_grounds1": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "You step into a wide, open stretch of worn earth where the wind sweeps freely across the fields. The ground is dry and cracked from constant use, and the faint scent of hay lingers in the air. To the north, the land rises toward the flight field, while the path continues south deeper into the threshing grounds.",
       "exits": {
         "north": "flight_field", 
         "south": "threshing_grounds2"
@@ -183,7 +183,7 @@
 
       "threshing_grounds2": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "The terrain here is uneven, marked by wagon ruts and scattered straw. The quiet feels heavier, as if fewer people pass through this section. Paths branch out in multiple directions, each leading deeper into the sprawling grounds.",
       "exits": {
         "north": "threshing_grounds1", 
         "east": "threshing_grounds3",
@@ -196,7 +196,7 @@
 
       "threshing_grounds3": {
       "name": "Threshing Grounds",
-      "description": "TREES",
+      "description": "A cluster of tall, weathered trees rises here, their branches creaking softly in the wind. The shade they cast cools the ground beneath your feet, and fallen leaves crunch as you move. The area feels slightly more alive, as birds occasionally dart between the branches.",
       "exits": {
         "west": "threshing_grounds2",
         "southwest": "threshing_grounds4",
@@ -209,19 +209,33 @@
 
       "threshing_grounds4": {
       "name": "Threshing Grounds",
-      "description": "TREES",
+      "description": "The trees grow thicker here, their branches twisting together overhead. As you look more closely, something catches your eye—a small paper tucked within the crook of a branch.",
       "exits": {
         "northeast": "threshing_grounds3", 
-        "southwest": "threshing_grounds9"
+        "southwest": "threshing_grounds9",
+        "up": "trees"
+      },
+
+      "trees": {
+      "name": "Trees",
+      "description": "As you pull yourself up into the branches, you find yourself surrounded by a canopy of leaves. The paper you found is now within reach, and as you unfold it, you see a riddle written in shifting symbols.",
+      "exits": {
+        "down": "threshing_grounds4"
       },
 
       "items": [
+          {
+            "id": "riddle",
+            "name": "A tattered scroll",
+            "description": "A tattered scroll, its surface filled with ancient symbols. You stare closely, and the symbols seem to shift and rearrange themselves: \n\n\"I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I?\""
+
+          }
       ]
     },
 
       "threshing_grounds5": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "This part of the grounds is quieter, with flattened grass and scattered debris hinting at past activity.",
       "exits": {
         "east": "threshing_grounds7", 
         "southeast": "threshing_grounds6"
@@ -233,7 +247,7 @@
 
       "threshing_grounds6": {
       "name": "Threshing Grounds",
-      "description": "PILE OF WOOD",
+      "description": "A large pile of chopped wood sits here, stacked unevenly as if abandoned mid-task.",
       "exits": {
         "north": "threshing_grounds3", 
         "northwest": "threshing_grounds5",
@@ -248,7 +262,7 @@
     
   "threshing_grounds7": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "The ground here is smoother, as if frequently traveled.",
       "exits": {
         "east": "threshing_grounds5",
         "southwest": "threshing_grounds6"
@@ -260,7 +274,7 @@
 
     "threshing_grounds8": {
       "name": "Threshing Grounds",
-      "description": "WHERE THE DRAGONS ARE!!!",
+      "description": "The air grows heavy and warm as you enter this area. Before you, dragons rest and shift, their scales glinting in the light. Some watch you closely, their eyes sharp and intelligent.\n\nYou feel a choice forming:\n- run away \n- stand ground \n- approach \n- use riddle \n- hide \n- retreat \n\nEvery movement matters here—these creatures are powerful, and your actions will decide your fate.",
       "exits": {
         "northeast": "threshing_grounds6",
         "northwest": "threshing_grounds10"
@@ -272,7 +286,7 @@
 
     "threshing_grounds9": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "This area feels more secluded, with the surrounding paths partially hidden by uneven terrain.",
       "exits": {
         "north": "threshing_grounds11",
         "northeast": "threshing_grounds4",
@@ -285,7 +299,7 @@
 
      "threshing_grounds10": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "A narrow stretch of land connects different parts of the grounds.",
       "exits": {
         "south": "threshing_grounds8",
         "southeast": "threshing_grounds9"
@@ -297,7 +311,7 @@
 
       "threshing_grounds11": {
       "name": "Threshing Grounds",
-      "description": "",
+      "description": "This quieter corner of the grounds feels slightly safer, though still isolated.",
       "exits": {
         "south": "threshing_grounds9",
         "northeast": "threshing_grounds2"
@@ -526,7 +540,8 @@
 
      
 
-    }
+      }
+    } 
 
 
 
