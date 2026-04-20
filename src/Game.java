@@ -28,7 +28,10 @@ public class Game {
         System.out.println();
 
         System.out.println("What's your gender? (m/f)");
-        player.setGender(scanner.nextLine());
+        while (player.getGender() == null) {
+            player.setGender(scanner.nextLine());
+            System.out.println(player.getGender());
+        }
 
         Room currentRoom = rooms.get(player.getCurrentRoomId());
         System.out.println(currentRoom.getLongDescription(rooms));
