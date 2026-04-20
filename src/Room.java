@@ -45,7 +45,7 @@ public class Room {
         items.add(item);
     }
 
-    public String getLongDescription() {
+    public String getLongDescription(Map<String, Room> rooms) {
         StringBuilder sb = new StringBuilder();
         sb.append(name).append("\n");
         System.out.println();
@@ -81,7 +81,12 @@ public class Room {
 
                 sb.append(direction);
                 sb.append(" to the ");
-                sb.append(exits.get(direction));
+                    Room neighbor = rooms.get(exits.get(direction));  // new
+                if (neighbor != null) {                           // new
+                    sb.append(neighbor.getName());                // new
+                } else {                                          // new
+                    sb.append(exits.get(direction));              // new
+                }                                                 // new
                 sb.append(", ");
             }
             sb.setLength(sb.length() - 2);
