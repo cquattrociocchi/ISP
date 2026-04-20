@@ -31,7 +31,7 @@ public class Game {
         player.setGender(scanner.nextLine());
 
         Room currentRoom = rooms.get(player.getCurrentRoomId());
-        System.out.println(currentRoom.getLongDescription());
+        System.out.println(currentRoom.getLongDescription(rooms));
 
         while (true) {
             System.out.print("> ");
