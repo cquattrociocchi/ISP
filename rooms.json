@@ -105,8 +105,9 @@
       "description": "You are in a narrow dorm stairwell. The stone steps curve tightly upward, and the light is dim. Every sound-your breathing, your movement- echoes throughout the chamber.",
       "exits": {
         "south": "fourth_wing",
-        "southwest": "dragon_rotunda",
-        "west": "dorms"
+        "down": "dragon_rotunda",
+        "up": "dorms"
+
       },
       "items": [
         {
@@ -121,7 +122,7 @@
       "name": "Dragon Rotunda",
       "description": "You stand in middle of the chamber, which stretches high above you, its walls marked with shadows and scars. The air is warm, heavy, and even in the stillness, the space feels alive.",
       "exits": {
-        "northeast":"dorm_stairwell",
+        "up":"dorm_stairwell",
         "east": "fourth_wing",
         "south": "flight_field",
         "southwest": "sparring_gym",
@@ -461,7 +462,7 @@
       "exits": {
         "north": "ravine_tunnel3",
         "south": "dragon_rotunda", 
-        "east": "dorm_stairwell", 
+        "down": "dorm_stairwell", 
         "west": "library"
       },
       "items": [
