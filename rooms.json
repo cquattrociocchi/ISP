@@ -153,10 +153,11 @@
       "name": "Flight Field",
       "description":"You are outside. ... []",
       "exits": {
-        "south": "threshing_grounds",
+        "south": "threshing_grounds1",
         "east": "first_wing",
         "northwest": "sparring_gym",
         "north": "dragon_rotunda"
+  
       },
       "items": [
         {
@@ -167,13 +168,144 @@
       ]
     },
 
-    "threshing_grounds": {
+    "threshing_grounds1": {
       "name": "Threshing Grounds",
       "description": "",
       "exits": {
-        "north": "flight_field"
-      }
+        "north": "flight_field", 
+        "south": "threshing_grounds2"
+      },
+
+      "items": [
+      ]
     },
+
+      "threshing_grounds2": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "north": "threshing_grounds1", 
+        "east": "threshing_grounds3",
+        "southwest": "threshing_grounds11"
+      },
+
+      "items": [
+      ]
+    },
+
+      "threshing_grounds3": {
+      "name": "Threshing Grounds",
+      "description": "TREES",
+      "exits": {
+        "west": "threshing_grounds2",
+        "southwest": "threshing_grounds4",
+        "south":"threshing_grounds6"
+      },
+
+      "items": [
+      ]
+    },
+
+      "threshing_grounds4": {
+      "name": "Threshing Grounds",
+      "description": "TREES",
+      "exits": {
+        "northeast": "threshing_grounds3", 
+        "southwest": "threshing_grounds9"
+      },
+
+      "items": [
+      ]
+    },
+
+      "threshing_grounds5": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "east": "threshing_grounds7", 
+        "southeast": "threshing_grounds6"
+      },
+
+      "items": [
+      ]
+    },
+
+      "threshing_grounds6": {
+      "name": "Threshing Grounds",
+      "description": "PILE OF WOOD",
+      "exits": {
+        "north": "threshing_grounds3", 
+        "northwest": "threshing_grounds5",
+        "northeast": "threshing_grounds7",
+        "southwest": "threshing_grounds8"
+      },
+
+      "items": [
+      ]
+    },
+
+    
+  "threshing_grounds7": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "east": "threshing_grounds5",
+        "southwest": "threshing_grounds6"
+      },
+
+      "items": [
+      ]
+    },
+
+    "threshing_grounds8": {
+      "name": "Threshing Grounds",
+      "description": "WHERE THE DRAGONS ARE!!!",
+      "exits": {
+        "northeast": "threshing_grounds6",
+        "northwest": "threshing_grounds10"
+      },
+
+      "items": [
+      ]
+    },
+
+    "threshing_grounds9": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "north": "threshing_grounds11",
+        "northeast": "threshing_grounds4",
+        "northwest":"threshing_grounds10"
+      },
+
+      "items": [
+      ]
+    },
+
+     "threshing_grounds10": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "south": "threshing_grounds8",
+        "southeast": "threshing_grounds9"
+      },
+
+      "items": [
+      ]
+    },
+
+      "threshing_grounds11": {
+      "name": "Threshing Grounds",
+      "description": "",
+      "exits": {
+        "south": "threshing_grounds9",
+        "northeast": "threshing_grounds2"
+      },
+
+      "items": [
+      ]
+    },
+
 
     "sparring_gym": {
       "name": "Sparring Gym",
