@@ -6,14 +6,23 @@ public class Player {
     private List<Item> inventory;
     private String name;
     private String gender;
+    private int points;
+    private int health;
+    private boolean alive;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
         this.inventory = new ArrayList<>();
+        this.points = 0;
+        this.health = 20;
+        this.alive = true;
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (!name.isBlank())
+            this.name = name;
+        else
+            System.out.println("I don't understand that command.");
     }
 
     public String getName() {
@@ -21,12 +30,10 @@ public class Player {
     }
 
     public void setGender(String gender) {
-        if (gender.equals("m") || gender.equals("f")) {
+        if (gender.equals("m") || gender.equals("f"))
             this.gender = gender;
-        }
-        else {
+        else
             System.out.println("I don't understand that command.");
-        }
     }
 
     public String getGender() {
@@ -51,5 +58,42 @@ public class Player {
 
     public List<Item> getInventory() {
         return inventory;
+    }
+
+    public void addPoints(int amount) {
+        points += amount;
+    }
+
+    public void deductPoints(int amount) {
+        points -= amount;
+    }
+    public int getPoints() {
+        return points;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void addHealth(int amount) {
+        health += amount;
+    }
+
+    public void deductHealth(int amount) {
+        health -= amount;
+        
+        if (health <= 0)
+            alive = false;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public String getStats() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("You have ").append(points).append(" points.\n");
+        sb.append("You have ").append(health).append(" health.\n");
+        return sb.toString();
     }
 }
