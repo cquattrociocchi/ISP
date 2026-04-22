@@ -2,11 +2,13 @@ public class Item {
     private String id;
     private String name;
     private String description;
+    private String type; 
 
-    public Item(String id, String name, String description) {
+    public Item(String id, String name, String description, String type) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.type = type; 
     }
 
     public String getId() {
@@ -20,4 +22,24 @@ public class Item {
     public String getDescription() {
         return description;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void useAttackItem() {
+        //poison dagger, sword, etc.
+    }
+
+    public void riddle() {
+        //riddle
+    }
+
+    public void useHealingItem() {
+        //potion, bandage, etc. 
+    }
+
+
 }
+
+

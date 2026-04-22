@@ -446,46 +446,64 @@ public class CommandParser {
             break;
             
             case "hide":
-                String roomId = player.getCurrentRoomId();
-                if (roomId.indexOf("threshing") != -1) {
-                    player.setCurrentRoomId("threshing_grounds6");
-                    System.out.println("You quickly hide behind the pile of wood, trying to stay out of sight.");
-                } else {
-                    player.setCurrentRoomId("dorm_stairwell");
-                    System.out.println("You quickly slip into the dorm stairwell, hidden by the dark shadows that cling to the walls.");
-                }
+                // String roomId = player.getCurrentRoomId();
 
-                currentRoom = rooms.get(player.getCurrentRoomId()); 
-                System.out.println(currentRoom.getLongDescription(rooms));
-                break;
+                // if (roomId.indexOf("threshing") != -1) {
+                //     player.setCurrentRoomId("threshing_grounds6");
+                //     System.out.println("You quickly hide behind the pile of wood, trying to stay out of sight.");
+                // } else {
+                //     player.setCurrentRoomId("dorm_stairwell");
+                //     System.out.println("You quickly slip into the dorm stairwell, hidden by the dark shadows that cling to the walls.");
+                // }
+
+                // currentRoom = rooms.get(player.getCurrentRoomId()); 
+                // System.out.println(currentRoom.getLongDescription(rooms));
+                // break;
             
             case "retreat":
+                System.out.println("Where would you like to go?");
+                System.out.println("Exits: " + rooms.get(player.getCurrentRoomId()).getExits().keySet());
                 //String previousRoom = player.getPreviousRoomId(); 
                 //I think we have to create something in the player class to store previous room Ids if we want to do this
 
             
-            // case "use": 
-            //     if (words.length < 2){
-            //         System.out.println("Use what?")
-            //         break;
-            //     }
+            case "use": 
+                if (words.length < 2){
+                    System.out.println("Use what?");
+                    break;
+                }
 
-            //     String itemName = words[1].toLowerCase();
-            //     //Item item = player.getItem(itemName); we need to create a getItem method in the player I think?
-
-            //     if (item == null){
-            //         System.out.println("You don't have a " + itemName + ".");
-            //         break;
-            //     }
-
-            //     String itemId = item.getId();
-            //     currentRoom = rooms.get(player.getCurrentRoomId());
-
-            //     //spcific cases for using items
-
-            //     //etc. case "use riddle" 
-            //     //specific riddle to bond with the dragons 
-
+                else {
+                    String itemName = input.substring(input.indexOf(" ") + 1);
+                    Room room = rooms.get(player.getCurrentRoomId());
+                    Item itemToUse = null;
+                    for (Item item : room.getItems()) {
+                        if (item.getName().equalsIgnoreCase(itemName)) {
+                            itemToUse = item;
+                            break;
+                        }
+                    }
+                    
+                    if (itemToUse != null) {
+                        if (itemToUse.getType().equals("attack")) {
+                            itemToUse.useAttackItem();
+                            System.out.println("You use the " + itemToUse.getName() + " to attack.");
+                        } else if (itemToUse.getType().equals("healing")) {
+                            itemToUse.useHealingItem();
+                            System.out.println("You use the " + itemToUse.getName() + " to heal yourself.");
+                        } else if (itemToUse.getType().equals("riddle")) {
+                            itemToUse.riddle();
+                            System.out.println("You use the " + itemToUse.getName() + " to solve a riddle.");
+                        } else {
+                            System.out.println("You can't use that item right now.");
+                        }
+                    } else {
+                        System.out.println("There is no " + itemName + " here.");
+                    }
+                }
+            }
+        
+             
             
             
 
@@ -501,4 +519,4 @@ public class CommandParser {
                     
         }
     }
-}
+
