@@ -55,7 +55,7 @@ public class Room {
             sb.append("You see ");
             String vowels = "aeiou";
             for (int i = 0; i < items.size(); i++) {
-                if (i == items.size() - 1)
+                if (i > 0 && i == items.size() - 1)
                     sb.append("and ");
 
                 if (vowels.indexOf(items.get(i).getName().substring(0, 1)) >= 0)
@@ -76,8 +76,8 @@ public class Room {
             for (int i = 0; i < keys.size(); i++) {
                 String direction = keys.get(i);
 
-                if (i == keys.size() - 1)
-                    sb.append("and ");
+                if (i > 0 && i == keys.size() - 1)
+                    sb.append("or ");
 
                 sb.append(direction);
                 sb.append(" to the ");
@@ -92,8 +92,6 @@ public class Room {
             sb.setLength(sb.length() - 2);
             sb.append(".\n");
         }
-        sb.append("You have ").append(Points.getScore());
         return sb.toString();
-
     }
 }
