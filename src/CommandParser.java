@@ -188,8 +188,35 @@ public class CommandParser {
 
             break; 
             
-            //this does not work because I don't think the target room ID exists but the rooms have the exit - crashes when it runs
-             case "northeast":
+            case " go down":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("down");
+                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You walk down the stairs.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case " go up":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("up");
+                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You walk up the stairs.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+            
+            case "northeast":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("northeast");
                 if (nextRoomId != null) {
@@ -418,23 +445,20 @@ public class CommandParser {
             break;
             
             case "hide":
-                // String roomId = player.getCurrentRoomId();
+                String roomId = player.getCurrentRoomId();
+                if (roomId.indexOf("threshing") != -1) {
+                    player.setCurrentRoomId("threshing_grounds6");
+                    System.out.println("You quickly hide behind the pile of wood, trying to stay out of sight.");
+                } else {
+                    player.setCurrentRoomId("dorm_stairwell");
+                    System.out.println("You quickly slip into the dorm stairwell, hidden by the dark shadows that cling to the walls.");
+                }
 
-                // if (roomId.indexOf("threshing") != -1) {
-                //     player.setCurrentRoomId("threshing_grounds6");
-                //     System.out.println("You quickly hide behind the pile of wood, trying to stay out of sight.");
-                // } else {
-                //     player.setCurrentRoomId("dorm_stairwell");
-                //     System.out.println("You quickly slip into the dorm stairwell, hidden by the dark shadows that cling to the walls.");
-                // }
-
-                // currentRoom = rooms.get(player.getCurrentRoomId()); 
-                // System.out.println(currentRoom.getLongDescription(rooms));
-                // break;
+                currentRoom = rooms.get(player.getCurrentRoomId()); 
+                System.out.println(currentRoom.getLongDescription(rooms));
+                break;
             
             case "retreat":
-                System.out.println("Where would you like to go?");
-                System.out.println("Exits: " + rooms.get(player.getCurrentRoomId()).getExits().keySet());
                 //String previousRoom = player.getPreviousRoomId(); 
                 //I think we have to create something in the player class to store previous room Ids if we want to do this
 
@@ -488,11 +512,10 @@ public class CommandParser {
             
 
 
-            
 
+   
             
                     
         }
     }
-
 
