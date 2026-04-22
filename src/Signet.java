@@ -25,13 +25,13 @@ public class Signet {
             attackValue = 5;
         }
 
-        else if (prob < 1) {
+        else {
             name = "Lightning";
             attackValue = 5;
         }
     }
 
-    public void attack(Student student) {
-        
+    public void attack(Person person) {
+        person.deductHealth(attackValue);
     }
 }
