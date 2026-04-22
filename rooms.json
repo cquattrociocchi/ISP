@@ -274,7 +274,7 @@
 
     "threshing_grounds8": {
       "name": "Threshing Grounds",
-      "description": "The air grows heavy and warm as you enter this area. Before you, dragons rest and shift, their scales glinting in the light. Some watch you closely, their eyes sharp and intelligent.\n\nYou feel a choice forming:\n- run away \n- stand ground \n- approach \n- use riddle \n- hide \n- retreat \n\nEvery movement matters here—these creatures are powerful, and your actions will decide your fate.",
+      "description": "The air grows heavy and warm as you enter this area. Before you, dragons rest and shift, their scales glinting in the light. Some watch you closely, their eyes sharp and intelligent.\n\nYou feel a choice forming:\n- run away \n- stand ground \n- approach \n- use riddle \n\nEvery movement matters here—these creatures are powerful, and your actions will decide your fate.",
       "exits": {
         "northeast": "threshing_grounds6",
         "northwest": "threshing_grounds10"

@@ -406,7 +406,6 @@ public class CommandParser {
              break;
         }
 
-            
         case "stand":
         case "stay":    
         case "stand ground": {
@@ -477,6 +476,9 @@ public class CommandParser {
             }
         
              
+
+            
+     
             
             
 
@@ -492,4 +494,5 @@ public class CommandParser {
                     
         }
     }
+
 
