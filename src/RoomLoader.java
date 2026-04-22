@@ -32,7 +32,24 @@ public class RoomLoader {
                     items.add(new Item(itemId, itemName, itemDescription));
                 }
 
-                Room room = new Room(roomId, name, description, exits, items);
+                List<Person> people = new ArrayList<>();
+                JsonArray peopleJson = roomData.getAsJsonArray("people");
+                for (JsonElement personElement : peopleJson) {
+                    JsonObject personObj = personElement.getAsJsonObject();
+                    String personId = personObj.get("id").getAsString();
+                    String personName = personObj.get("name").getAsString();
+                    String personDescription = personObj.get("description").getAsString();
+                    String personType = personObj.get("type").getAsString();
+                    int personHealth = personObj.get("health").getAsInt();
+                    String personSignet = personObj.get("signet").getAsString();
+                    int personAttackValue = personObj.get("attackValue").getAsInt();
+                    String personGreeting = personObj.get("greeting").getAsString();
+                    String personDeathMessage = personObj.get("deathMessage").getAsString();
+                    people.add(new Person(personId, personName, personDescription, personType, personHealth, 
+                                            personSignet, personAttackValue, personGreeting, personDeathMessage));
+                }
+
+                Room room = new Room(roomId, name, description, exits, items, people);
                 rooms.put(roomId, room);
             }
         } catch (Exception e) {

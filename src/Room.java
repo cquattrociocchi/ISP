@@ -8,13 +8,15 @@ public class Room {
     private String description;
     private Map<String, String> exits; // direction → roomId
     private List<Item> items;
+    private List<Person> people;
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.exits = exits;
         this.items = items;
+        this.people = people;
     }
 
     public String getId() {
@@ -68,6 +70,12 @@ public class Room {
             // Remove trailing comma and space
             sb.setLength(sb.length() - 2);
             sb.append(".\n");
+        }
+
+        if (!people.isEmpty()) {
+            for (int i = 0; i < people.size(); i++) {
+                sb.append(people.get(i).getDescription()).append("\n");
+            }
         }
 
         if (!exits.isEmpty()) {
