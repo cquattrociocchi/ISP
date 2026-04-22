@@ -188,8 +188,35 @@ public class CommandParser {
 
             break; 
             
-            //this does not work because I don't think the target room ID exists but the rooms have the exit - crashes when it runs
-             case "northeast":
+            case " go down":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("down");
+                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You walk down the stairs.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case " go up":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("up");
+                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You walk up the stairs.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+            
+            case "northeast":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("northeast");
                 if (nextRoomId != null) {
@@ -245,13 +272,219 @@ public class CommandParser {
 
             break;
 
+             case "n":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("north");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move north.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+            break;
 
-
-                    
-
+            case "s":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("south");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move south.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+            break;
             
 
+            case "e":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("east");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move east.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break;
+
+            case "w":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("west");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move west.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case "ne":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("northeast");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move northeast.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case "nw":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("northwest");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move northwest.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break; 
+
+            case "se":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("southeast");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move southeast.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break;
+
+            case "sw":
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                nextRoomId = currentRoom.getExits().get("southwest");
+                if (nextRoomId != null) {
+                    player.setCurrentRoomId(nextRoomId);
+                    System.out.println("You move southwest.");
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    System.out.println(currentRoom.getLongDescription(rooms));
+                } else {
+                    System.out.println("You can't go that way.");
+                }
+
+            break;
+
+            case "shortcuts":
+                System.out.println("Shortcuts: ");
+                System.out.println("- n, s, e, w for north, south, east, west");
+                System.out.println("- ne, nw, se, sw for diagonal directions");
+                System.out.println("- up/down for stairs");
+                break;
+
+            case "exits":
+                System.out.println("Exits:");
+                currentRoom = rooms.get(player.getCurrentRoomId());
+                for (String direction : currentRoom.getExits().keySet()) {
+                    System.out.println("- " + direction);
+                }
+            break;
             
+            case "climb":
+                if (words.length < 2) {
+                    System.out.println("Climb what?");
+                } else {
+                    String climbDirection = words[1];
+                    currentRoom = rooms.get(player.getCurrentRoomId());
+                    nextRoomId = currentRoom.getExits().get(climbDirection);
+                    if (nextRoomId != null) {
+                        player.setCurrentRoomId(nextRoomId);
+                        System.out.println("You climb " + climbDirection + ".");
+                        currentRoom = rooms.get(player.getCurrentRoomId());
+                        System.out.println(currentRoom.getLongDescription(rooms));
+                    } else {
+                        System.out.println("You can't climb that way.");
+                    }
+                }
+           break;
+
+           case "run": 
+           case  "run away": {
+            String roomId = player.getCurrentRoomId(); 
+
+            if (roomId.indexOf("threshing") != -1) {
+                player.setCurrentRoomId("threshing_grounds1");
+                System.out.println("You run back to the threshing entrance, away from the danger.");
+            } else{
+                player.setCurrentRoomId("ravinne_tunnel2");
+                System.out.println("You run as far away as possible, stopping above the ravinne, the river roaring in sync with your racing heartbeat.");
+            }
+
+             currentRoom = rooms.get(player.getCurrentRoomId()); 
+             System.out.println(currentRoom.getLongDescription(rooms));
+             break;
+        }
+
+            
+        case "stand":
+        case "stay":    
+        case "stand ground": {
+            System.out.println("You stand your ground, trying to remain calm and composed in the face of danger.");
+            break;
+        }
+            
+            case "approach":
+                System.out.println("You cautiously approach, trying to appear non-threatening.");
+            break;
+            
+            case "hide":
+                String roomId = player.getCurrentRoomId();
+                if (roomId.indexOf("threshing") != -1) {
+                    player.setCurrentRoomId("threshing_grounds6");
+                    System.out.println("You quickly hide behind the pile of wood, trying to stay out of sight.");
+                } else {
+                    player.setCurrentRoomId("dorm_stairwell");
+                    System.out.println("You quickly slip into the dorm stairwell, hidden by the dark shadows that cling to the walls.");
+                }
+
+                currentRoom = rooms.get(player.getCurrentRoomId()); 
+                System.out.println(currentRoom.getLongDescription(rooms));
+                break;
+            
+            case "retreat":
+                //String previousRoom = player.getPreviousRoomId(); 
+                //I think we have to create something in the player class to store previous room Ids if we want to do this
+
+            
+            // case "use": 
+            //     if (words.length < 2){
+            //         System.out.println("Use what?")
+            //         break;
+            //     }
+
+            //     String itemName = words[1].toLowerCase();
+            //     //Item item = player.getItem(itemName); we need to create a getItem method in the player I think?
+
+            //     if (item == null){
+            //         System.out.println("You don't have a " + itemName + ".");
+            //         break;
+            //     }
+
+            //     String itemId = item.getId();
+            //     currentRoom = rooms.get(player.getCurrentRoomId());
+
+            //     //spcific cases for using items
+
+            //     //etc. case "use riddle" 
+            //     //specific riddle to bond with the dragons 
                     
         }
     }
