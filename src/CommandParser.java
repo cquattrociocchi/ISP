@@ -188,35 +188,8 @@ public class CommandParser {
 
             break; 
             
-            case " go down":
-                currentRoom = rooms.get(player.getCurrentRoomId());
-                nextRoomId = currentRoom.getExits().get("down");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
-                    player.setCurrentRoomId(nextRoomId);
-                    System.out.println("You walk down the stairs.");
-                    currentRoom = rooms.get(player.getCurrentRoomId());
-                    System.out.println(currentRoom.getLongDescription(rooms));
-                } else {
-                    System.out.println("You can't go that way.");
-                }
-
-            break; 
-
-            case " go up":
-                currentRoom = rooms.get(player.getCurrentRoomId());
-                nextRoomId = currentRoom.getExits().get("up");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
-                    player.setCurrentRoomId(nextRoomId);
-                    System.out.println("You walk up the stairs.");
-                    currentRoom = rooms.get(player.getCurrentRoomId());
-                    System.out.println(currentRoom.getLongDescription(rooms));
-                } else {
-                    System.out.println("You can't go that way.");
-                }
-
-            break; 
-            
-            case "northeast":
+            //this does not work because I don't think the target room ID exists but the rooms have the exit - crashes when it runs
+             case "northeast":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("northeast");
                 if (nextRoomId != null) {
@@ -513,8 +486,8 @@ public class CommandParser {
             
 
 
+            
 
-   
             
                     
         }
