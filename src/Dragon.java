@@ -1,8 +1,9 @@
+
 public class Dragon {
     private String name; 
     private String colour; 
     private String tail; 
-
+    private boolean bonded = false;
     public Dragon() {
         double probColour = Math.random(); 
         if (probColour < 0.05) {
@@ -18,7 +19,6 @@ public class Dragon {
         } else {
             colour = "brown";
         }
-
         double probTail = Math.random();
         if (probTail < 0.05) {
             tail = "morningstartail";
@@ -31,7 +31,6 @@ public class Dragon {
         } else {
             tail = "clubtail";
         }
-
         double nameProb = Math.random(); 
         if (nameProb < 0.1) {
             name = "Vyrenthax";
@@ -57,23 +56,28 @@ public class Dragon {
     
         
     }
-
     public String getName() {
         return name;
     }   
-
     public String getTail(){
         return tail;
     }
-
     public String getColour() {
         return colour;
     }
+    public void bondWithPlayer(Player player) {
+        if (bonded){
+            System.out.println("Your dragon, " + name + ", a " + colour + " " + tail + " is already bonded with you.");
+            return;
+        }
 
-    public void bondWithPlayer() {
-        System.out.println("A " + colour + tail + "flies toward you. " ); //put this as the person enters the room
-        //bond can only happen 1 time, after entering this room twice - boolean roomEntered
-        //if points are at a certain number and use riddle, then call bond with player or bond with dragon
-        // Implement the logic for bonding with the player, e.g., increasing player's stats or unlocking new abilities.
+        bonded = true;
+
+        
+        System.out.println("The " + colour + " " + tail + " lowers its head. " + name + " has bonded with you!");
+
+        
+        player.addPoints(100); 
+        
     }
 }

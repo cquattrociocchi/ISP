@@ -240,6 +240,7 @@
           {
             "id": "riddle",
             "name": "A tattered scroll",
+            "type": "riddle",
             "description": "A tattered scroll, its surface filled with ancient symbols. You stare closely, and the symbols seem to shift and rearrange themselves: \n\n\"I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I?\""
 
           }

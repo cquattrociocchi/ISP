@@ -9,6 +9,9 @@ public class Room {
     private Map<String, String> exits; // direction → roomId
     private List<Item> items;
     private List<Person> people;
+    private Dragon dragon;
+    private boolean dragonAnnounced = false;
+    private boolean dragonSpawned = false;
 
     public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people) {
         this.id = id;
@@ -98,8 +101,28 @@ public class Room {
                 sb.append(", ");
             }
             sb.setLength(sb.length() - 2);
-            sb.append(".\n");
+
+            String finalDescription = description; 
+            if (dragon != null && this.id.equals("threshing_grounds8") && !dragonAnnounced) {
+                String dragonDescription = "A " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
+
+                finalDescription = finalDescription.replace("{{DRAGON}}", dragonDescription);
+                dragonAnnounced = true;
+            }
+            sb.append(finalDescription).append(".\n");
         }
         return sb.toString();
     }
-}
+
+    public void spawnDragon(){
+        if (this.id.equals("threshing_grounds8") && dragon == null){
+            dragon = new Dragon();dragonSpawned = true;
+        }
+    }
+
+    public Dragon getDragon() {
+        return dragon;
+        }
+    }
+    
+

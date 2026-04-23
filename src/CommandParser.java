@@ -481,6 +481,18 @@ public class CommandParser {
                     }
                     
                     if (itemToUse != null) {
+                        for (Item item : player.getInventory()) {
+                            if (item.getName().equalsIgnoreCase(itemName)) {
+                                itemToUse = item;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (itemToUse == null){
+                        System.out.println("There is no " + itemName + " here or in your inventory.");
+                        break;
+                    }
                         if (itemToUse.getType().equals("attack")) {
                             itemToUse.useAttackItem();
                             System.out.println("You use the " + itemToUse.getName() + " to attack.");
@@ -488,14 +500,12 @@ public class CommandParser {
                             itemToUse.useHealingItem();
                             System.out.println("You use the " + itemToUse.getName() + " to heal yourself.");
                         } else if (itemToUse.getType().equals("riddle")) {
-                            itemToUse.riddle();
-                            System.out.println("You use the " + itemToUse.getName() + " to solve a riddle.");
+                        itemToUse.riddle(room, player);
+                           break;
                         } else {
                             System.out.println("You can't use that item right now.");
                         }
-                    } else {
-                        System.out.println("There is no " + itemName + " here.");
-                    }
+                    } 
                 }
             }
         
@@ -517,5 +527,5 @@ public class CommandParser {
             
                     
         }
-    }
+    
 

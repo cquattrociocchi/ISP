@@ -32,15 +32,22 @@ public class Item {
         //poison dagger, sword, etc.
     }
 
-    public void riddle() {
+    public void riddle(Room room, Player player) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\\n\\n\\\"I am built, not born. \\n I connect two as one. \\n Break me and all is lost. \\n What am I?\\\"");
         System.out.println("What is the answer to this riddle? ");
         String answer = scanner.nextLine(); 
 
         if (answer.equalsIgnoreCase("a bond") || answer.equalsIgnoreCase("bond") || answer.equalsIgnoreCase("a dragon bond") || answer.equalsIgnoreCase("dragon bond")) {
-            //Correct answer, bond with dragon
-            // Implement the effect of solving the riddle, e.g., unlocking a door or revealing a hidden item.
+            
+            Dragon dragon = room.getDragon(); 
+
+            if (dragon != null && player.getPoints() > 200){ //not sure how many points
+                dragon.bondWithPlayer(player);
+            } else {
+                System.out.println("There is no dragon here to bond with.");
+            }
+
         } else {
             System.out.println("Incorrect. Try again.");
         }

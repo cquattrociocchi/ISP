@@ -33,6 +33,9 @@ public class Game {
             player.setGender(scanner.nextLine());
 
         Room currentRoom = rooms.get(player.getCurrentRoomId());
+        if (currentRoom == null){
+            currentRoom = rooms.get("parapet_entrance");
+        }
         System.out.println(currentRoom.getLongDescription(rooms));
         System.out.println(player.getStats());
 
