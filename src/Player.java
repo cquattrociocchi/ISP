@@ -50,6 +50,11 @@ public class Player {
 
     public void addItem(Item item) {
         inventory.add(item);
+        if (item.isFirstPickUp()) {
+            item.markAsPickedUp();
+            addPoints(item.getPointValue());
+            System.out.println("Congrats, you earned " + item.getPointValue() + " points! " + " Total: " + points + " points.");
+        }
     }
 
     public void removeItem(Item item) {
