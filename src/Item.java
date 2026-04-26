@@ -59,6 +59,10 @@ public class Item {
         //potion, bandage, etc. 
     }
 
+    public void useUtilityItem() {
+        //torch, rope, book, etc.
+    }
+
 
 }
 

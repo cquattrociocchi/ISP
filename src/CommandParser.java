@@ -500,7 +500,7 @@ public class CommandParser {
                             itemToUse.useHealingItem();
                             System.out.println("You use the " + itemToUse.getName() + " to heal yourself.");
                         } else if (itemToUse.getType().equals("riddle")) {
-                        itemToUse.riddle(room, player);
+                            itemToUse.riddle(room, player);
                            break;
                         } else {
                             System.out.println("You can't use that item right now.");
