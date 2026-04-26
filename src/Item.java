@@ -6,6 +6,7 @@ public class Item {
     private String type; 
     private boolean isPickedUpForFirstTime;
     public int pointValue;
+    private Scanner scanner = new Scanner(System.in);
 
     public Item(String id, String name, String description, String type, int pointValue) {
         this.id = id;
@@ -37,13 +38,11 @@ public class Item {
     }
 
     public void riddle(Room room, Player player) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("\\n\\n\\\"I am built, not born. \\n I connect two as one. \\n Break me and all is lost. \\n What am I?\\\"");
-        System.out.println("What is the answer to this riddle? ");
-        String answer = scanner.nextLine(); 
+        System.out.println("\n\n I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I? ");
+        String answer = scanner.nextLine();
+        boolean hint = true;
 
-        if (answer.equalsIgnoreCase("a bond") || answer.equalsIgnoreCase("bond") || answer.equalsIgnoreCase("a dragon bond") || answer.equalsIgnoreCase("dragon bond")) {
-            
+        if (answer.indexOf("bond") != -1){
             Dragon dragon = room.getDragon(); 
 
             if (dragon != null && player.getPoints() > 200){ //not sure how many points
@@ -53,8 +52,20 @@ public class Item {
             }
 
         } else {
-            System.out.println("Incorrect. Try again.");
+            if (hint) {
+                System.out.println("Would you like a hint? (yes/no)");
+                String hintResponse = scanner.nextLine();
+                if (hintResponse.equalsIgnoreCase("yes")) {
+                    System.out.println("Hint: It is something that can be formed between a dragon and a rider.");
+                    hint = false;
+            }
+            
+            else {
+                System.out.println("Incorrect. Try again.");
+            }
+            
         }
+    }
 
 
     }

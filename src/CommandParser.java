@@ -474,7 +474,7 @@ public class CommandParser {
                     String itemName = input.substring(input.indexOf(" ") + 1);
                     Room room = rooms.get(player.getCurrentRoomId());
                     Item itemToUse = null;
-                    for (Item item : room.getItems()) {
+                    for (Item item : player.getInventory()) {
                         if (item.getName().equalsIgnoreCase(itemName)) {
                             itemToUse = item;
                             break;
@@ -501,7 +501,7 @@ public class CommandParser {
                             itemToUse.useHealingItem();
                             System.out.println("You use the " + itemToUse.getName() + " to heal yourself.");
                         } else if (itemToUse.getType().equals("riddle")) {
-                            itemToUse.riddle(room, player);
+                            itemToUse.riddle(room, player); 
                            break;
                         } else {
                             System.out.println("You can't use that item right now.");
