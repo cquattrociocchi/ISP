@@ -4,12 +4,16 @@ public class Item {
     private String name;
     private String description;
     private String type; 
+    private boolean isPickedUpForFirstTime;
+    public int pointValue;
 
-    public Item(String id, String name, String description, String type) {
+    public Item(String id, String name, String description, String type, int pointValue) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.type = type; 
+        this.isPickedUpForFirstTime = false;
+        this.pointValue = pointValue;
     }
 
     public String getId() {
@@ -55,6 +59,16 @@ public class Item {
 
     }
 
+    public boolean isFirstPickUp() {
+        return !isPickedUpForFirstTime;
+    }
+
+    public void markAsPickedUp() {
+        isPickedUpForFirstTime = true;
+    }
+    public int getPointValue() {
+        return pointValue;
+    }
     public void useHealingItem() {
         //potion, bandage, etc. 
     }
@@ -65,5 +79,15 @@ public class Item {
 
 
 }
+
+// left Rider Boot: 10
+// small lantern: 10
+// pair of riding gloves: 15
+// map: 15 
+// leigheas serum: 20
+// combat dagger: 25
+// book of riders: 25
+// poison dagger: 35
+// tattered scroll: 45
 
 
