@@ -163,7 +163,7 @@ public class CommandParser {
             case "down":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("down");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || currentRoom.getId().indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk down the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -177,7 +177,7 @@ public class CommandParser {
             case "up":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("up");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || nextRoomId.indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk up the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -191,7 +191,7 @@ public class CommandParser {
             case " go down":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("down");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || currentRoom.getId().indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk down the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -200,12 +200,13 @@ public class CommandParser {
                     System.out.println("You can't go that way.");
                 }
 
+
             break; 
 
             case " go up":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("up");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || nextRoomId.indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk up the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());

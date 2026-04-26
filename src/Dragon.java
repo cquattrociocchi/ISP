@@ -18,7 +18,7 @@ public class Dragon {
             colour = "orange";
         } else {
             colour = "brown";
-        }
+        } 
         double probTail = Math.random();
         if (probTail < 0.05) {
             tail = "morningstartail";
@@ -67,7 +67,12 @@ public class Dragon {
     }
     public void bondWithPlayer(Player player) {
         if (bonded){
-            System.out.println("Your dragon, " + name + ", a " + colour + " " + tail + " is already bonded with you.");
+
+            if (colour.substring(0,1).indexOf("aeiou") >= 0) {
+                System.out.println("Your dragon, " + name + ", an " + colour + " " + tail + " is already bonded with you.");
+            } else {
+                System.out.println("Your dragon, " + name + ", a " + colour + " " + tail + " is already bonded with you.");
+            }
             return;
         }
 
