@@ -8,6 +8,8 @@ public class CommandParser {
             return;
         }
 
+        
+
         String command = words[0];
 
         switch (command) {
@@ -498,13 +500,18 @@ public class CommandParser {
                             itemToUse.useAttackItem();
                             System.out.println("You use the " + itemToUse.getName() + " to attack.");
                         } else if (itemToUse.getType().equals("healing")) {
-                            itemToUse.useHealingItem();
-                            System.out.println("You use the " + itemToUse.getName() + " to heal yourself.");
+                            itemToUse.useHealingItem(player, itemToUse);
+                            break;
                         } else if (itemToUse.getType().equals("riddle")) {
                             itemToUse.riddle(room, player); 
                            break;
-                        } else {
-                            System.out.println("You can't use that item right now.");
+                        } else if (itemToUse.getType().equals("utility")) {
+                            itemToUse.useUtilityItem(player, itemToUse);
+                            break;
+                        }
+
+                        else {
+                            System.out.println("You can't use the " + itemToUse.getName() + ".");
                         }
                     } 
                 }

@@ -12,14 +12,16 @@ public class Room {
     private Dragon dragon;
     private boolean dragonAnnounced = false;
     private boolean dragonSpawned = false;
+    private Player player;
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people, Player player) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.exits = exits;
         this.items = items;
         this.people = people;
+        this.player = player;
     }
 
     public String getId() {
@@ -58,6 +60,7 @@ public class Room {
         String finalDescription = description; 
             if (this.id.equals("threshing_grounds8") && !dragonSpawned && dragon==null) {
                 dragon = new Dragon();
+                dragonSpawned = true;
             }
             if (dragon != null && this.id.equals("threshing_grounds8") && !dragonAnnounced) {
                 String dragonDescription = " A " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
@@ -68,6 +71,11 @@ public class Room {
 
                 finalDescription += finalDescription.replace("{{DRAGON}}", dragonDescription);
                 dragonAnnounced = true;
+            }
+
+            if (this.id.equals("flight_field") && player.getPoints() < 200){
+                //id = previousRoomId; 
+                finalDescription = "You need 200 points to enter the flight field.";
             }
 
             sb.append(finalDescription).append("\n");
