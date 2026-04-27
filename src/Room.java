@@ -13,6 +13,7 @@ public class Room {
     private boolean dragonAnnounced = false;
     private boolean dragonSpawned = false;
     private Player player;
+    private boolean roomEntered = false;
 
     public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people, Player player) {
         this.id = id;
@@ -58,27 +59,35 @@ public class Room {
         System.out.println();
 
         String finalDescription = description; 
-            if (this.id.equals("threshing_grounds8") && !dragonSpawned && dragon==null) {
-                dragon = new Dragon();
-                dragonSpawned = true;
-            }
-            if (dragon != null && this.id.equals("threshing_grounds8") && !dragonAnnounced) {
-                String dragonDescription = " A " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
-                 if (dragon.getColour().substring(0,1).indexOf("aeiou") >= 0) {
-                     dragonDescription = " An " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
-            }
+        if (this.id.equals("threshing_grounds8") && !dragonSpawned && dragon==null) {
+            dragon = new Dragon();
+            dragonSpawned = true;
+        }
+        if (dragon != null && this.id.equals("threshing_grounds8") && !dragonAnnounced) {
+            String dragonDescription = " A " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
+                if (dragon.getColour().substring(0,1).indexOf("aeiou") >= 0) {
+                    dragonDescription = " An " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
+        }
 
 
-                finalDescription += finalDescription.replace("{{DRAGON}}", dragonDescription);
-                dragonAnnounced = true;
-            }
+            finalDescription += finalDescription.replace("{{DRAGON}}", dragonDescription);
+            dragonAnnounced = true;
+        }
 
-            if (this.id.equals("flight_field") && player.getPoints() < 200){
-                //id = previousRoomId; 
-                finalDescription = "You need 200 points to enter the flight field.";
-            }
+        if (this.id.equals("flight_field") && player.getPoints() < 200){
+            //id = previousRoomId; 
+            finalDescription = "You need 200 points to enter the flight field.";
+        }
 
-            sb.append(finalDescription).append("\n");
+        if (roomEntered) {
+            finalDescription = ""; 
+        }
+
+        else {
+            roomEntered = true;
+        }
+
+        sb.append(finalDescription).append("\n");
 
 
 

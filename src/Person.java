@@ -49,6 +49,10 @@ public class Person {
         }
     }
 
+    public int getAttackValue() {
+        return attackValue;
+    }
+
     public void greet() {
         System.out.println(greeting);
     }

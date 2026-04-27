@@ -105,6 +105,16 @@ public class Item {
         
     }
 
+    public void useAttackItem(Player player, Item item, Person person){
+        
+        person.deductHealth(attackValue); 
+        System.out.println("You used " + item.getName() + " and dealt " + attackValue + " damage to " + person.getName() + "!");
+
+        System.out.println(person.getName() + " attacked you back. You lost" +  person.getAttackValue() + "health points! \nCurrent health: " + player.getHealth());
+        player.deductHealth(person.getAttackValue());
+
+    }
+
 
 }
 

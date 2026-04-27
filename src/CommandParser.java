@@ -498,8 +498,8 @@ public class CommandParser {
                         break;
                     }
                         if (itemToUse.getType().equals("attack")) {
-                            itemToUse.useAttackItem();
-                            System.out.println("You use the " + itemToUse.getName() + " to attack.");
+                            itemToUse.useAttackItem(player, itemToUse, person);
+                            
                         } else if (itemToUse.getType().equals("healing")) {
                             itemToUse.useHealingItem(player, itemToUse);
                             break;
