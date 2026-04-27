@@ -12,7 +12,8 @@
           "name": "Left Rider Boot",
           "description": "A rider boot, with dark leather, sturdy with grip on the bottom.",
           "type": "wear",
-          "attackValue": ""
+          "attackValue": "",
+          "pointValue": 15
         }
       ],
       "people": [
@@ -128,7 +129,8 @@
         {
           "id": "lantern",
           "name": "A Small Lantern",
-          "description": "A glowing ember burns in the center of the lantern, casting a warm light around it."
+          "description": "A glowing ember burns in the center of the lantern, casting a warm light around it.",
+          "pointValue": 10
         }
       ]
     },
@@ -148,7 +150,8 @@
         {
           "id": "riding gloves",
           "name": "A Pair of Riding Gloves",
-          "description": "A pair of sturdy riding gloves, worn smooth by use."
+          "description": "A pair of sturdy riding gloves, worn smooth by use.",
+          "pointValue": 15
         }
       ]
     },
@@ -179,7 +182,8 @@
         {
           "id": "book of riders",
           "name": "Book of Riders",
-          "description": "roll-keeper's Book of Riders where bonds between dragon and rider are recorded."
+          "description": "roll-keeper's Book of Riders where bonds between dragon and rider are recorded.",
+          "pointValue": 25
         }
       ]
     },
@@ -196,7 +200,7 @@
       ]
     },
 
-      "threshing_grounds2": {
+    "threshing_grounds2": {
       "name": "Threshing Grounds",
       "description": "The terrain here is uneven, marked by wagon ruts and scattered straw. The quiet feels heavier, as if fewer people pass through this section. Paths branch out in multiple directions, each leading deeper into the sprawling grounds.",
       "exits": {
@@ -209,7 +213,7 @@
       ]
     },
 
-      "threshing_grounds3": {
+    "threshing_grounds3": {
       "name": "Threshing Grounds",
       "description": "A cluster of tall, weathered trees rises here, their branches creaking softly in the wind. The shade they cast cools the ground beneath your feet, and fallen leaves crunch as you move. The area feels slightly more alive, as birds occasionally dart between the branches.",
       "exits": {
@@ -222,7 +226,7 @@
       ]
     },
 
-      "threshing_grounds4": {
+    "threshing_grounds4": {
       "name": "Threshing Grounds",
       "description": "The trees grow thicker here, their branches twisting together overhead. As you look more closely, something catches your eye—a small paper tucked within the crook of a branch.",
       "exits": {
@@ -230,8 +234,12 @@
         "southwest": "threshing_grounds9",
         "up": "trees"
       },
+      "items": [
 
-      "trees": {
+      ]
+    },
+
+    "trees": {
       "name": "Trees",
       "description": "As you pull yourself up into the branches, you find yourself surrounded by a canopy of leaves. The paper you found is now within reach, and as you unfold it, you see a riddle written in shifting symbols.",
       "exits": {
@@ -242,13 +250,15 @@
           {
             "id": "riddle",
             "name": "A tattered scroll",
-            "description": "A tattered scroll, its surface filled with ancient symbols. You stare closely, and the symbols seem to shift and rearrange themselves: \n\n\"I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I?\""
+            "type": "riddle",
+            "description": "A tattered scroll, its surface filled with ancient symbols. You stare closely, and the symbols seem to shift and rearrange themselves: \n\n\"I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I?\"",
+            "pointValue": 45
 
           }
       ]
     },
 
-      "threshing_grounds5": {
+    "threshing_grounds5": {
       "name": "Threshing Grounds",
       "description": "This part of the grounds is quieter, with flattened grass and scattered debris hinting at past activity.",
       "exits": {
@@ -260,7 +270,7 @@
       ]
     },
 
-      "threshing_grounds6": {
+    "threshing_grounds6": {
       "name": "Threshing Grounds",
       "description": "A large pile of chopped wood sits here, stacked unevenly as if abandoned mid-task.",
       "exits": {
@@ -275,7 +285,7 @@
     },
 
     
-  "threshing_grounds7": {
+    "threshing_grounds7": {
       "name": "Threshing Grounds",
       "description": "The ground here is smoother, as if frequently traveled.",
       "exits": {
@@ -289,7 +299,7 @@
 
     "threshing_grounds8": {
       "name": "Threshing Grounds",
-      "description": "The air grows heavy and warm as you enter this area. Before you, dragons rest and shift, their scales glinting in the light. Some watch you closely, their eyes sharp and intelligent.\n\nYou feel a choice forming:\n- run away \n- stand ground \n- approach \n- use riddle \n- hide \n- retreat \n\nEvery movement matters here—these creatures are powerful, and your actions will decide your fate.",
+      "description": "The air grows heavy and warm as you enter this area. Before you, dragons rest and shift, their scales glinting in the light. Some watch you closely, their eyes sharp and intelligent.\n\n {{DRAGON}} \n\nYou feel a choice forming:\n- run away \n- stand ground \n- approach \n- use scroll \n\nEvery movement matters here—these creatures are powerful, and your actions will decide your fate.",
       "exits": {
         "northeast": "threshing_grounds6",
         "northwest": "threshing_grounds10"
@@ -312,7 +322,7 @@
       ]
     },
 
-     "threshing_grounds10": {
+    "threshing_grounds10": {
       "name": "Threshing Grounds",
       "description": "A narrow stretch of land connects different parts of the grounds.",
       "exits": {
@@ -324,7 +334,7 @@
       ]
     },
 
-      "threshing_grounds11": {
+    "threshing_grounds11": {
       "name": "Threshing Grounds",
       "description": "This quieter corner of the grounds feels slightly safer, though still isolated.",
       "exits": {
@@ -349,12 +359,14 @@
         {
           "id": "combat dagger",
           "name": "Combat Dagger",
-          "description": "The everyday blade a rider carries. These daggers are used in sparring challenges and various survival situations."
+          "description": "The everyday blade a rider carries. These daggers are used in sparring challenges and various survival situations.",
+          "pointValue": 25
         },
         {
           "id": "poison dagger",
           "name": "Poison Dagger",
-          "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges."
+          "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges.",
+          "pointValue": 35
         }
       ]
     },
@@ -370,13 +382,14 @@
         {
           "id": "map",
           "name": "Map",
-          "description": "You found a paper map of Basgiath College. It will help you with navigation." 
+          "description": "You found a paper map of Basgiath College. It will help you with navigation.",
+          "pointValue": 15
         }
       ]
     },
 
     
-  "healer_quadrant": {
+    "healer_quadrant": {
       "name": "Healer Quadrant",
       "description": "The air smells sharply of herbs and clean linen, with cots lining the room.",
       "exits": {
@@ -388,7 +401,8 @@
         {
           "id": "leigheas serum",
           "name": "A Leigheas Serum",
-          "description": "A bitter, amber-coloured, medicinal tonic, used to dull pain and treat injuries."
+          "description": "A bitter, amber-coloured, medicinal tonic, used to dull pain and treat injuries.",
+          "pointValue": 20
         }
       ]
     },
@@ -402,7 +416,7 @@
       "items": [
       ]
     },
-     "admin_building": {
+    "admin_building": {
       "name": "Admin Building",
       "description": "You enter the administration building, with smooth stone walls and a heavy silence in the air.",
       "exits": {
@@ -452,7 +466,7 @@
       ]
     },
 
-     "ravine_tunnel1": {
+    "ravine_tunnel1": {
       "name": "Ravine Tunnel",
       "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
       "exits": {
@@ -485,7 +499,7 @@
       ]
     },
 
-     "dorms": {
+    "dorms": {
       "name": "Dormitories",
       "description": "You are in the riders' dormitories, where narrow rows of beds, scattered belongings, and exhausted voices fill the air.",
       "exits": {
@@ -531,7 +545,7 @@
       ]
       },
 
-      "weapon_tactics": {
+    "weapon_tactics": {
       "name": "Weapon Tactics Classroom",
       "description": "You are in the weapon tactics classroom, a space where students learn the art of wielding their weapons effectively.",
       "exits": {
@@ -542,7 +556,7 @@
       ]
       },
 
-      "history_classroom": {
+    "history_classroom": {
       "name": "History Classroom",
       "description": "You are in the history classroom, a space where students learn about the past and its impact on the present.",
       "exits": {
@@ -552,11 +566,8 @@
       "items": [
       ]
       }
-
-     
-
-      }
-    } 
+    }
+  
 
 
 

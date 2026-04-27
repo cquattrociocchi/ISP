@@ -1,8 +1,9 @@
+
 public class Dragon {
     private String name; 
     private String colour; 
     private String tail; 
-
+    private boolean bonded = false;
     public Dragon() {
         double probColour = Math.random(); 
         if (probColour < 0.05) {
@@ -17,8 +18,7 @@ public class Dragon {
             colour = "orange";
         } else {
             colour = "brown";
-        }
-
+        } 
         double probTail = Math.random();
         if (probTail < 0.05) {
             tail = "morningstartail";
@@ -31,32 +31,58 @@ public class Dragon {
         } else {
             tail = "clubtail";
         }
-
         double nameProb = Math.random(); 
-        if (nameProb < 0.05) {
-            name = "Smaug";
+        if (nameProb < 0.1) {
+            name = "Vyrenthax";
         } else if (nameProb < 0.2) {
-            name = "Fafnir";
+            name = "Kaelithor";
+        } else if (nameProb < 0.3) {
+            name = "Zaryndra";
         } else if (nameProb < 0.4) {
-            name = "Glaurung";
+            name = "Thraxxion";
+        } else if (nameProb < 0.5) {
+            name = "Nyserath";
         } else if (nameProb < 0.6) {
-            name = "Ancalagon";
+            name = "Vaelgorin";
+        } else if (nameProb < 0.7) {
+            name = "Xandryth";
         } else if (nameProb < 0.8) {
-            name = "Tiamat";
+            name = "Pyravex";
+        } else if (nameProb < 0.9) {
+            name = "Drakthira";
         } else {
-            name = "Nidhogg";
+            name = "Morvanyx";
         }
-        
-
-
+    
         
     }
-
     public String getName() {
         return name;
     }   
+    public String getTail(){
+        return tail;
+    }
+    public String getColour() {
+        return colour;
+    }
+    public void bondWithPlayer(Player player) {
+        if (bonded){
 
-    public void bondWithPlayer() {
-        // Implement the logic for bonding with the player, e.g., increasing player's stats or unlocking new abilities.
+            if (colour.substring(0,1).indexOf("aeiou") >= 0) {
+                System.out.println("Your dragon, " + name + ", an " + colour + " " + tail + " is already bonded with you.");
+            } else {
+                System.out.println("Your dragon, " + name + ", a " + colour + " " + tail + " is already bonded with you.");
+            }
+            return;
+        }
+
+        bonded = true;
+
+        
+        System.out.println("The " + colour + " " + tail + " lowers its head. " + name + " has bonded with you!");
+
+        
+        player.addPoints(100); 
+        
     }
 }

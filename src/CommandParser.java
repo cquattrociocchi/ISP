@@ -164,7 +164,7 @@ public class CommandParser {
             case "down":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("down");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || currentRoom.getId().indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk down the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -178,7 +178,7 @@ public class CommandParser {
             case "up":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("up");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || nextRoomId.indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk up the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -192,7 +192,7 @@ public class CommandParser {
             case " go down":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("down");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || currentRoom.getId().indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk down the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -201,12 +201,13 @@ public class CommandParser {
                     System.out.println("You can't go that way.");
                 }
 
+
             break; 
 
             case " go up":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("up");
-                if (nextRoomId != null && nextRoomId.indexOf("stair") != -1) {
+                if (nextRoomId != null && (nextRoomId.indexOf("stair") != -1 || nextRoomId.indexOf("trees") != -1)) {
                     player.setCurrentRoomId(nextRoomId);
                     System.out.println("You walk up the stairs.");
                     currentRoom = rooms.get(player.getCurrentRoomId());
@@ -434,7 +435,6 @@ public class CommandParser {
              break;
         }
 
-            
         case "stand":
         case "stay":    
         case "stand ground": {
@@ -465,69 +465,51 @@ public class CommandParser {
                 //I think we have to create something in the player class to store previous room Ids if we want to do this
 
             
-            // case "use": 
-            //     if (words.length < 2){
-            //         System.out.println("Use what?")
-            //         break;
-            //     }
-
-            //     String itemName = words[1].toLowerCase();
-            //     //Item item = player.getItem(itemName); we need to create a getItem method in the player I think?
-
-            //     if (item == null){
-            //         System.out.println("You don't have a " + itemName + ".");
-            //         break;
-            //     }
-
-            //     String itemId = item.getId();
-            //     currentRoom = rooms.get(player.getCurrentRoomId());
-
-            //     //spcific cases for using items
-
-            //     //etc. case "use riddle" 
-            //     //specific riddle to bond with the dragons 
-
-            case "use":
-                if (words.length < 2) {
+            case "use": 
+                if (words.length < 2){
                     System.out.println("Use what?");
-                } else {
+                    break;
+                }
+
+                else {
                     String itemName = input.substring(input.indexOf(" ") + 1);
-                    List<Item> inventory = player.getInventory();
+                    Room room = rooms.get(player.getCurrentRoomId());
                     Item itemToUse = null;
-                    for (Item item : inventory) {
+                    for (Item item : player.getInventory()) {
                         if (item.getName().equalsIgnoreCase(itemName)) {
                             itemToUse = item;
                             break;
                         }
                     }
+                    
                     if (itemToUse != null) {
+                        for (Item item : player.getInventory()) {
+                            if (item.getName().equalsIgnoreCase(itemName)) {
+                                itemToUse = item;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (itemToUse == null){
+                        System.out.println("There is no " + itemName + " here or in your inventory.");
+                        break;
+                    }
                         if (itemToUse.getType().equals("attack")) {
                             itemToUse.useAttackItem();
+                            System.out.println("You use the " + itemToUse.getName() + " to attack.");
+                        } else if (itemToUse.getType().equals("healing")) {
+                            itemToUse.useHealingItem();
+                            System.out.println("You use the " + itemToUse.getName() + " to heal yourself.");
+                        } else if (itemToUse.getType().equals("riddle")) {
+                            itemToUse.riddle(room, player); 
+                           break;
+                        } else {
+                            System.out.println("You can't use that item right now.");
                         }
-                        if (itemToUse.getType().equals("heal")) {
-
-                        }
-                        if (itemToUse.getType().equals("riddle")) {
-
-                        }
-                        System.out.println("You used the " + itemToUse.getName() + ".");
-                    } else {
-                        System.out.println("You do not have the " + itemName + ".");
-                    }
+                    } 
                 }
-                break;
-            
-
-                
-
-            
-            
-
-
-
-   
-            
-                    
+            }        
         }
-    }
-}
+    
+

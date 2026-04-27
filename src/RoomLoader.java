@@ -29,12 +29,26 @@ public class RoomLoader {
                     String itemId = itemObj.get("id").getAsString();
                     String itemName = itemObj.get("name").getAsString();
                     String itemDescription = itemObj.get("description").getAsString();
-                    String itemType = itemObj.get("type").getAsString();
-                    items.add(new Item(itemId, itemName, itemDescription, itemType));
+                    String itemType;
+                if (itemObj.has("type")) {
+                    itemType = itemObj.get("type").getAsString();
+                } else {
+                    itemType = "";
+                }
+
+                int itemPointValue;
+                if (itemObj.has("pointValue")) {
+                    itemPointValue = itemObj.get("pointValue").getAsInt();
+                } else {
+                    itemPointValue = 0;
+                }
+
+                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue, 0));
                 }
 
                 List<Person> people = new ArrayList<>();
                 JsonArray peopleJson = roomData.getAsJsonArray("people");
+                if (peopleJson != null) {
                 for (JsonElement personElement : peopleJson) {
                     JsonObject personObj = personElement.getAsJsonObject();
                     String personId = personObj.get("id").getAsString();
@@ -49,6 +63,7 @@ public class RoomLoader {
                     people.add(new Person(personId, personName, personDescription, personType, personHealth, 
                                             personSignet, personAttackValue, personGreeting, personDeathMessage));
                 }
+            }
 
                 Room room = new Room(roomId, name, description, exits, items, people);
                 rooms.put(roomId, room);
