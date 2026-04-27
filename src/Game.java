@@ -37,6 +37,8 @@ public class Game {
             currentRoom = rooms.get("parapet_entrance");
         }
 
+        
+
 
         System.out.println(currentRoom.getLongDescription(rooms));
         System.out.println(player.getStats());

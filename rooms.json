@@ -11,7 +11,7 @@
           "id": "boot",
           "name": "Left Rider Boot",
           "description": "A rider boot, with dark leather, sturdy with grip on the bottom.",
-          "type": "wear",
+          "type": "utility",
           "attackValue": "",
           "pointValue": 15
         }
@@ -20,7 +20,7 @@
         {
           "id": "xaden",
           "name": "Xaden Riorson",
-          "description": "blah",
+          "description": "You see a 6'4 wingleader, with windblown black hair, tan skin, and golf flecked onyx eyes.",
           "type": "",
           "health": "40",
           "signet": "shadows",
@@ -33,7 +33,7 @@
 
     "parapet1": {
       "name": "Parapet",
-      "description": "You are on the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.",
+      "description": "",
       "exits": {
         "north": "parapet_entrance", 
         "south": "parapet2"
@@ -43,7 +43,7 @@
 
     "parapet2": {
       "name": "Parapet",
-      "description": "You are on the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.\nThe parapet leads to an opening in the eight-foot wall of the Rider's Quadrant in the distance.",
+      "description": "The parapet leads to an opening in the eight-foot wall of the Rider's Quadrant in the distance.",
       "exits": {
         "north": "parapet1", 
         "south": "parapet3"
@@ -53,7 +53,7 @@
 
     "parapet3": {
       "name": "Parapet",
-      "description": "You are on the parapet, a narrow strip of stone that stretches over a deadly drop, wind clawing at you from all sides. One wrong step and the canyon below will claim you.\nThe eight-foot wall of the Rider's Quadrant looms ahead of you, and the opening for the parapet is close now.",
+      "description": "The eight-foot wall of the Rider's Quadrant looms ahead of you, and the opening for the parapet is close now.",
       "exits": {
         "north": "parapet2", 
         "south": "parapet4"
@@ -130,6 +130,7 @@
           "id": "lantern",
           "name": "A Small Lantern",
           "description": "A glowing ember burns in the center of the lantern, casting a warm light around it.",
+          "type": "utility",
           "pointValue": 10
         }
       ]
@@ -151,6 +152,7 @@
           "id": "riding gloves",
           "name": "A Pair of Riding Gloves",
           "description": "A pair of sturdy riding gloves, worn smooth by use.",
+          "utility": "utility",
           "pointValue": 15
         }
       ]
@@ -183,6 +185,7 @@
           "id": "book of riders",
           "name": "Book of Riders",
           "description": "roll-keeper's Book of Riders where bonds between dragon and rider are recorded.",
+          "type": "utility",
           "pointValue": 25
         }
       ]
@@ -360,12 +363,14 @@
           "id": "combat dagger",
           "name": "Combat Dagger",
           "description": "The everyday blade a rider carries. These daggers are used in sparring challenges and various survival situations.",
+          "type": "attack",
           "pointValue": 25
         },
         {
           "id": "poison dagger",
           "name": "Poison Dagger",
           "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges.",
+          "type": "attack",
           "pointValue": 35
         }
       ]
@@ -383,6 +388,7 @@
           "id": "map",
           "name": "Map",
           "description": "You found a paper map of Basgiath College. It will help you with navigation.",
+          "type": "utility",
           "pointValue": 15
         }
       ]
@@ -402,6 +408,7 @@
           "id": "leigheas serum",
           "name": "A Leigheas Serum",
           "description": "A bitter, amber-coloured, medicinal tonic, used to dull pain and treat injuries.",
+          "type": "healing",
           "pointValue": 20
         }
       ]

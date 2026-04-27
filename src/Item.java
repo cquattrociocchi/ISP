@@ -47,7 +47,7 @@ public class Item {
         if (answer.indexOf("bond") != -1){
             Dragon dragon = room.getDragon(); 
 
-            if (dragon != null && player.getPoints() > 200){ //not sure how many points
+            if (dragon != null && player.getPoints() > 200){ //not sure how many points 
                 dragon.bondWithPlayer(player);
             } else {
                 System.out.println("There is no dragon here to bond with.");
@@ -82,12 +82,37 @@ public class Item {
     public int getPointValue() {
         return pointValue;
     }
-    public void useHealingItem() {
+    public void useHealingItem(Player player, Item item) {
+        player.addHealth(10); 
+
+        System.out.println("You used" + item.getName() + "and restored 10 health points! Current health: " + player.getHealth());
+
         //potion, bandage, etc. 
     }
 
-    public void useUtilityItem() {
-        //torch, rope, book, etc.
+    public void useUtilityItem(Player player, Item item) {
+            if (item.getId().equals("boot")) {
+                System.out.println("You put on the Left Rider Boot. You can now step onto the parapet, the grip improved.");
+            } else if (item.getId().equals("lantern")) {
+                System.out.println("You light the Small Lantern. The area around you is illuminated, revealing hidden details in the environment.");
+            } else if (item.getId().equals("gloves")) {
+                System.out.println("You put on the Pair of Riding Gloves. Your hands are protected and your grip is enhanced, allowing you to climb and hold onto surfaces more securely.");
+            } else if (item.getId().equals("map")) {
+                System.out.println("You unfold the Map. It reveals the layout of the parapet and surrounding areas, helping you navigate and find hidden paths.");
+            } else {
+                System.out.println("You can't use the " + item.getName() + " right now.");
+            }
+        
+    }
+
+    public void useAttackItem(Player player, Item item, Person person){
+        
+        person.deductHealth(attackValue); 
+        System.out.println("You used " + item.getName() + " and dealt " + attackValue + " damage to " + person.getName() + "!");
+
+        System.out.println(person.getName() + " attacked you back. You lost" +  person.getAttackValue() + "health points! \nCurrent health: " + player.getHealth());
+        player.deductHealth(person.getAttackValue());
+
     }
 
 

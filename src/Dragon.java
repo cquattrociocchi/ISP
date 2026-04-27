@@ -65,6 +65,8 @@ public class Dragon {
     public String getColour() {
         return colour;
     }
+
+    
     public void bondWithPlayer(Player player) {
         if (bonded){
 
@@ -77,6 +79,7 @@ public class Dragon {
         }
 
         bonded = true;
+
 
         
         System.out.println("The " + colour + " " + tail + " lowers its head. " + name + " has bonded with you!");
