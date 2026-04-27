@@ -91,7 +91,7 @@ public class Room {
             System.out.println("The parapet is too slippery! You will fall without enough grip."); 
         }
 
-        if (this.id.equals("dorm_stairwell") && !(player.getLanternStatus())){
+        if (this.id.equals("dorm_stairwell") && !(player.getLanternStatus()) && !(player.lanternOn())){
             System.out.println("You cannot see anything, it is too dark.");
             return ""; 
         }
