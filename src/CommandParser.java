@@ -2,6 +2,8 @@ import java.util.List;
 import java.util.Map;
 
 public class CommandParser {
+    
+
     public void parse(String input, Player player, Map<String, Room> rooms) {
         String[] words = input.trim().toLowerCase().split("\\s+");
         if (words[0].isEmpty()) {
@@ -14,6 +16,7 @@ public class CommandParser {
         String command = words[0];
 
         switch (command) {
+
             case "go":
                 if (words.length < 2) {
                     System.out.println("Go where?");
@@ -497,26 +500,122 @@ public class CommandParser {
                         System.out.println("There is no " + itemName + " here or in your inventory.");
                         break;
                     }
-                        if (itemToUse.getType().equals("attack")) {
-                            itemToUse.useAttackItem(player, itemToUse, person);
-                            
-                        } else if (itemToUse.getType().equals("healing")) {
-                            itemToUse.useHealingItem(player, itemToUse);
-                            break;
-                        } else if (itemToUse.getType().equals("riddle")) {
-                            itemToUse.riddle(room, player); 
-                           break;
-                        } else if (itemToUse.getType().equals("utility")) {
-                            itemToUse.useUtilityItem(player, itemToUse);
-                            break;
-                        }
+                    if (itemToUse.getType().equals("attack")) {
+                        System.out.println("Attack who with " + itemToUse.getName());
+                        break;
 
-                        else {
-                            System.out.println("You can't use the " + itemToUse.getName() + ".");
-                        }
-                    } 
+                
+                    } else if (itemToUse.getType().equals("healing")) {
+                        itemToUse.useHealingItem(player, itemToUse);
+                        break;
+                    } else if (itemToUse.getType().equals("riddle")) {
+                        itemToUse.riddle(room, player); 
+                        break;
+                    } else if (itemToUse.getType().equals("utility")) {
+                        itemToUse.useUtilityItem(player, itemToUse);
+                        break;
+                    }
+
+                    else {
+                        System.out.println("You can't use the " + itemToUse.getName() + ".");
+                    }
+                    }
+                    
+            
+
+        
+
+        case "attack":
+            if (words.length < 3) {
+                    System.out.println("Attack who? Type: attack [person] [item]");
+                    break;
+            }
+
+            Room room = rooms.get(player.getCurrentRoomId()); 
+
+            String inputWithoutAttack = input.substring(7).trim(); 
+
+            Item itemToUse = null; 
+            String itemName = ""; 
+
+            for (Item item : player.getInventory()) {
+                if (inputWithoutAttack.toLowerCase().endsWith(item.getName().toLowerCase())){
+                    itemToUse = item;
+                    itemName = item.getName(); 
+                    break; 
                 }
-            }        
+            }
+
+            if (itemToUse == null){
+                System.out.println("You don't have that item.");
+                break;
+            }
+
+            String targetName = inputWithoutAttack.substring(0, inputWithoutAttack.length() - itemName.length()).trim(); 
+
+            if (targetName.isEmpty()){
+                System.out.println("Attack who?");
+                break;
+            }
+
+            Person target = null;
+            for (Person p : room.getPeople()){
+                if (p.getName().equalsIgnoreCase(targetName)){
+                    target = p; 
+                    break;
+                }
+            }
+
+
+            if (target == null){
+                System.out.println(targetName + " is not in the room.");
+                break;
+            }
+
+            
+           
+
+            itemToUse.useAttackItem(player, itemToUse, target, room); 
+            break; 
+
+            
+            
+            case "lantern": {
+                if (words.length < 2){
+                    System.out.println("Use: lantern on/off");
+                    break;
+                }
+
+                if (words[1].equalsIgnoreCase("on")) {
+            player.turnLanternOn();
+                }
+                else if (words[1].equalsIgnoreCase("off")) {
+                    player.turnLanternOff();
+                }
+                else {
+                    System.out.println("Use: lantern on/off");
+                }
+
+                break;
+            }
+         }
+           
+
+        player.lanternTimer();
+
         }
+
+        
+
+            
+
+
+
+
+           
+
+        }
+    
+
     
 

@@ -9,6 +9,9 @@ public class Player {
     private int points;
     private int health;
     private boolean alive;
+    private boolean wearingBoot = false;
+    private boolean lanternOn = false;
+    private int lanternTurns = 20; 
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -101,4 +104,43 @@ public class Player {
         sb.append("You have ").append(health).append(" health.\n");
         return sb.toString();
     }
+
+    public boolean isWearingBoot(){
+        return wearingBoot; 
+    }
+
+    public void enableBoot(){
+        wearingBoot = true; 
+    }
+
+    public void turnLanternOn() {
+        if (lanternTurns <= 0){
+            System.out.println("Your mage light has run out of fuel");
+            return;
+        }
+
+        lanternOn = true;
+        System.out.println("You light the lantern.");
+    }
+
+    public void turnLanternOff() {
+        lanternOn = false;
+        System.out.println("You extinguish the lantern.");
+    }
+
+    public void lanternTimer(){
+        if (lanternOn && lanternTurns > 0){
+            lanternTurns--;
+        }
+
+        if (lanternTurns == 0){
+            lanternOn = false;
+            System.out.println("Your lantern has burned out.");
+        }
+    }
+
+    public boolean getLanternStatus(){
+        return (lanternTurns <=0); 
+    }
+    
 }

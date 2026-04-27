@@ -93,8 +93,11 @@ public class Item {
     public void useUtilityItem(Player player, Item item) {
             if (item.getId().equals("boot")) {
                 System.out.println("You put on the Left Rider Boot. You can now step onto the parapet, the grip improved.");
+                player.enableBoot(); 
+
             } else if (item.getId().equals("lantern")) {
-                System.out.println("You light the Small Lantern. The area around you is illuminated, revealing hidden details in the environment.");
+                System.out.println("You light the Small Lantern. To turn on and off your lantern, type: lantern on or latern off.");
+
             } else if (item.getId().equals("gloves")) {
                 System.out.println("You put on the Pair of Riding Gloves. Your hands are protected and your grip is enhanced, allowing you to climb and hold onto surfaces more securely.");
             } else if (item.getId().equals("map")) {
@@ -105,13 +108,15 @@ public class Item {
         
     }
 
-    public void useAttackItem(Player player, Item item, Person person){
+    public void useAttackItem(Player player, Item item, Person person, Room room){
         
+  
         person.deductHealth(attackValue); 
         System.out.println("You used " + item.getName() + " and dealt " + attackValue + " damage to " + person.getName() + "!");
 
-        System.out.println(person.getName() + " attacked you back. You lost" +  person.getAttackValue() + "health points! \nCurrent health: " + player.getHealth());
-        player.deductHealth(person.getAttackValue());
+        player.deductHealth(person.getAttackValue()); 
+        System.out.println(person.getName() + " attacked you back. You lost" +  person.getAttackValue() + " health points! \nCurrent health: " + player.getHealth());
+        
 
     }
 
