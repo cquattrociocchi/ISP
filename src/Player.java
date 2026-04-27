@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Player {
     private String currentRoomId;
+    private String previousRoomId;
     private List<Item> inventory;
     private String name;
     private String gender;
@@ -12,6 +13,7 @@ public class Player {
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
+        this.previousRoomId = null;
         this.inventory = new ArrayList<>();
         this.points = 0;
         this.health = 20;
@@ -45,7 +47,8 @@ public class Player {
     }
 
     public void setCurrentRoomId(String roomId) {
-        this.currentRoomId = roomId;
+        previousRoomId = currentRoomId;
+        currentRoomId = roomId;
     }
 
     public void addItem(Item item) {
