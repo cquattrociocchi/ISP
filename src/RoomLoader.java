@@ -38,12 +38,12 @@ public class RoomLoader {
 
                 int itemPointValue;
                 if (itemObj.has("pointValue")) {
-                itemPointValue = itemObj.get("pointValue").getAsInt();
+                    itemPointValue = itemObj.get("pointValue").getAsInt();
                 } else {
                     itemPointValue = 0;
                 }
 
-                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue));
+                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue, 0));
                 }
 
                 List<Person> people = new ArrayList<>();

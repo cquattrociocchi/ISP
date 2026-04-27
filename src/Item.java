@@ -3,18 +3,20 @@ public class Item {
     private String id;
     private String name;
     private String description;
-    private String type; 
-    private boolean isPickedUpForFirstTime;
+    private String type;
+    private int attackValue;
     public int pointValue;
+    private boolean isPickedUpForFirstTime;
     private Scanner scanner = new Scanner(System.in);
 
-    public Item(String id, String name, String description, String type, int pointValue) {
+    public Item(String id, String name, String description, String type, int pointValue, int attackValue) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.type = type; 
-        this.isPickedUpForFirstTime = false;
+        this.attackValue = attackValue;
         this.pointValue = pointValue;
+        this.isPickedUpForFirstTime = false;
     }
 
     public String getId() {
