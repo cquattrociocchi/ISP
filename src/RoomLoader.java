@@ -3,6 +3,8 @@ import java.util.*;
 import com.google.gson.*;
 
 public class RoomLoader {
+    private Player player;
+
     public Map<String, Room> loadRooms(String filePath) {
         Map<String, Room> rooms = new HashMap<>();
         try {
@@ -38,7 +40,7 @@ public class RoomLoader {
 
                 int itemPointValue;
                 if (itemObj.has("pointValue")) {
-                    itemPointValue = itemObj.get("pointValue").getAsInt();
+                itemPointValue = itemObj.get("pointValue").getAsInt();
                 } else {
                     itemPointValue = 0;
                 }
@@ -60,12 +62,18 @@ public class RoomLoader {
                     int personAttackValue = personObj.get("attackValue").getAsInt();
                     String personGreeting = personObj.get("greeting").getAsString();
                     String personDeathMessage = personObj.get("deathMessage").getAsString();
+
                     people.add(new Person(personId, personName, personDescription, personType, personHealth, 
                                             personSignet, personAttackValue, personGreeting, personDeathMessage));
+                        
                 }
+
+                
+
+
             }
 
-                Room room = new Room(roomId, name, description, exits, items, people);
+                Room room = new Room(roomId, name, description, exits, items, people, player);
                 rooms.put(roomId, room);
             }
         } catch (Exception e) {
