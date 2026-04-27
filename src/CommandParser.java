@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Map;
 
 public class CommandParser {
@@ -486,7 +487,35 @@ public class CommandParser {
             //     //etc. case "use riddle" 
             //     //specific riddle to bond with the dragons 
 
-            
+            case "use":
+                if (words.length < 2) {
+                    System.out.println("Use what?");
+                } else {
+                    String itemName = input.substring(input.indexOf(" ") + 1);
+                    List<Item> inventory = player.getInventory();
+                    Item itemToUse = null;
+                    for (Item item : inventory) {
+                        if (item.getName().equalsIgnoreCase(itemName)) {
+                            itemToUse = item;
+                            break;
+                        }
+                    }
+                    if (itemToUse != null) {
+                        if (itemToUse.getType().equals("attack")) {
+                            itemToUse.useAttackItem();
+                        }
+                        if (itemToUse.getType().equals("heal")) {
+
+                        }
+                        if (itemToUse.getType().equals("riddle")) {
+
+                        }
+                        System.out.println("You used the " + itemToUse.getName() + ".");
+                    } else {
+                        System.out.println("You do not have the " + itemName + ".");
+                    }
+                }
+                break;
             
 
                 

@@ -29,7 +29,8 @@ public class RoomLoader {
                     String itemId = itemObj.get("id").getAsString();
                     String itemName = itemObj.get("name").getAsString();
                     String itemDescription = itemObj.get("description").getAsString();
-                    items.add(new Item(itemId, itemName, itemDescription));
+                    String itemType = itemObj.get("type").getAsString();
+                    items.add(new Item(itemId, itemName, itemDescription, itemType));
                 }
 
                 List<Person> people = new ArrayList<>();

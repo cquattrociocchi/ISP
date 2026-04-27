@@ -3,13 +3,15 @@ public class Item {
     private String id;
     private String name;
     private String description;
-    private String type; 
+    private String type;
+    private int attackValue;
 
-    public Item(String id, String name, String description, String type) {
+    public Item(String id, String name, String description, String type, int attackValue) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.type = type; 
+        this.attackValue = attackValue;
     }
 
     public String getId() {
@@ -32,7 +34,7 @@ public class Item {
         //poison dagger, sword, etc.
     }
 
-    public void riddle() {
+    public void useRiddle() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\\n\\n\\\"I am built, not born. \\n I connect two as one. \\n Break me and all is lost. \\n What am I?\\\"");
         System.out.println("What is the answer to this riddle? ");

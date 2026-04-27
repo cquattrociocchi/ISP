@@ -10,7 +10,9 @@
         {
           "id": "boot",
           "name": "Left Rider Boot",
-          "description": "A rider boot, with dark leather, sturdy with grip on the bottom."
+          "description": "A rider boot, with dark leather, sturdy with grip on the bottom.",
+          "type": "wear",
+          "attackValue": ""
         }
       ],
       "people": [
