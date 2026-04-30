@@ -12,7 +12,7 @@
           "name": "Left Rider Boot",
           "description": "A rider boot, with dark leather, sturdy with grip on the bottom.",
           "type": "utility",
-          "attackValue": "",
+          "attackValue": 15,
           "pointValue": 15
         }
       ],
@@ -334,6 +334,20 @@
       },
 
       "items": [
+      ], 
+
+       "people": [
+        {
+          "id": "deer",
+          "name": "Deer",
+          "description": "You see a flash of brown, darting behind a tree.",
+          "type": "",
+          "health": "5",
+          "signet": "",
+          "attackValue": "",
+          "greeting": "",
+          "deathMessage": ""
+        }
       ]
     },
 
@@ -364,6 +378,7 @@
           "name": "Combat Dagger",
           "description": "The everyday blade a rider carries. These daggers are used in sparring challenges and various survival situations.",
           "type": "attack",
+          "attackvalue": 25, 
           "pointValue": 25
         },
         {
@@ -371,6 +386,7 @@
           "name": "Poison Dagger",
           "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges.",
           "type": "attack",
+          "attackvalue": 35, 
           "pointValue": 35
         }
       ]
@@ -440,6 +456,20 @@
         "south": "admin_building"
       },
       "items": [
+      ],
+
+      "people": [
+        {
+          "id": "general_sorrengail",
+          "name": "General Lilith Sorrengail",
+          "description": "You see the formidable, cold, and disciplined commander sitting in her office. You do not want to mess with her.",
+          "type": "",
+          "health": "50",
+          "signet": "storm_wielding",
+          "attackValue": "25",
+          "greeting": "",
+          "deathMessage": ""
+        }
       ]
     },
     "infantry_quadrant": {
@@ -503,6 +533,19 @@
         "south": "dorms"
       },
       "items": [
+      ], 
+       "people": [
+        {
+          "id": "sloane",
+          "name": "Sloane Mairi ",
+          "description": "As you walk through the tunnel, you see a cadet with a glowing relic etched into their skin, winding around their arm. As you look closer, you recognize the blond hair and sky blue eyes.",
+          "type": "rider",
+          "health": "22",
+          "signet": "siphon",
+          "attackValue": "20",
+          "greeting": "Hey! Get out of my way.",
+          "deathMessage": ""
+        }
       ]
     },
 
