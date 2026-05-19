@@ -47,8 +47,26 @@ public class Game {
             System.out.print("> ");
             String input = scanner.nextLine();
             commandParser.parse(input, player, rooms);
+
+                    if (currentRoom.getId().equals("flight_field") && player.getPoints() < 200){ //crashing because player is null?
+            //id = previousRoomId; 
+            System.out.println("You need 200 points to enter the flight field.");
+        }
+
+        if (currentRoom.getId().equals("parapet_entrance") && !(player.isWearingBoot())){ //crashing because  player is null?
+            System.out.println("The parapet is too slippery! You will fall without enough grip."); 
+        }
+
+        if (currentRoom.getId().equals("dorm_stairwell") && !(player.getLanternStatus()) && !(player.lanternOn())){
+            System.out.println("You cannot see anything, it is too dark.");
+        }
         }
     }
 
-    //test
+    public Player getPlayer() {
+        return this.player;
+    }
+
+
+
 }
