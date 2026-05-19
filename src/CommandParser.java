@@ -464,10 +464,6 @@ public class CommandParser {
                 currentRoom = rooms.get(player.getCurrentRoomId()); 
                 System.out.println(currentRoom.getLongDescription(rooms));
                 break;
-            
-            case "retreat":
-                //String previousRoom = player.getPreviousRoomId(); 
-                //I think we have to create something in the player class to store previous room Ids if we want to do this
 
             
             case "use": 
@@ -605,16 +601,7 @@ public class CommandParser {
 
         }
 
-        
-
-            
-
-
-
-
-           
-
-        }
+    }
     
 
     

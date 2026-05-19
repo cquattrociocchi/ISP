@@ -108,7 +108,7 @@ public class Player {
         return sb.toString();
     }
 
-    public boolean isWearingBoot(){
+    public boolean isWearingBoot() {
         return wearingBoot; 
     }
 
@@ -119,7 +119,6 @@ public class Player {
     public void turnLanternOn() {
         if (lanternTurns <= 0){
             System.out.println("Your mage light has run out of fuel");
-            return;
         }
 
         lanternOn = true;
@@ -145,5 +144,6 @@ public class Player {
     public boolean getLanternStatus(){
         return (lanternTurns <=0); 
     }
+
     
 }
