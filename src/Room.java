@@ -12,18 +12,17 @@ public class Room {
     private Dragon dragon;
     private boolean dragonAnnounced = false;
     private boolean dragonSpawned = false;
-    private Player player;
     private boolean roomEntered = false;
+    private Player p1;
 
 
-    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people, Player player) {
+    public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.exits = exits;
         this.items = items;
         this.people = people;
-        this.player = player;
     }
 
     public String getId() {
@@ -80,20 +79,6 @@ public class Room {
 
             finalDescription += finalDescription.replace("{{DRAGON}}", dragonDescription);
             dragonAnnounced = true;
-        }
-
-        if (this.id.equals("flight_field") && player.getPoints() < 200){ //crashing because player is null?
-            //id = previousRoomId; 
-            finalDescription = "You need 200 points to enter the flight field.";
-        }
-
-        if (this.id.equals("parapet_entrance") && !(player.isWearingBoot())){ //crashing because  player is null?
-            System.out.println("The parapet is too slippery! You will fall without enough grip."); 
-        }
-
-        if (this.id.equals("dorm_stairwell") && !(player.getLanternStatus()) && !(player.lanternOn())){
-            System.out.println("You cannot see anything, it is too dark.");
-            return ""; 
         }
 
         if (roomEntered) {
