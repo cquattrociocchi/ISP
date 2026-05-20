@@ -1,8 +1,4 @@
 public class Signet {
-    // 5 % get inntinsic
-    // 45% ice
-    // 25% shadows
-    // 25% lightning
 
     private String name;
     private int attackValue;

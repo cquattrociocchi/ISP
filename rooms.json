@@ -13,7 +13,8 @@
           "description": "A rider boot, with dark leather, sturdy with grip on the bottom.",
           "type": "utility",
           "attackValue": 15,
-          "pointValue": 15
+          "pointValue": 15,
+          "nicknames": ["boot", "Boot"]
         }
       ],
       "people": [
@@ -153,7 +154,8 @@
           "name": "A Pair of Riding Gloves",
           "description": "A pair of sturdy riding gloves, worn smooth by use.",
           "utility": "utility",
-          "pointValue": 15
+          "pointValue": 15,
+          "nicknames": ["gloves", "pair of gloves", "pair of riding gloves", "riding gloves"]
         }
       ]
     },
@@ -186,7 +188,8 @@
           "name": "Book of Riders",
           "description": "roll-keeper's Book of Riders where bonds between dragon and rider are recorded.",
           "type": "utility",
-          "pointValue": 25
+          "pointValue": 25,
+          "nicknames": ["book", "book of riders", "riders book"]
         }
       ]
     },
@@ -255,8 +258,8 @@
             "name": "A tattered scroll",
             "type": "riddle",
             "description": "A tattered scroll, its surface filled with ancient symbols. You stare closely, and the symbols seem to shift and rearrange themselves: \n\n\"I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I?\"",
-            "pointValue": 45
-
+            "pointValue": 45,
+            "nicknames": ["tattered scroll", "scroll"]
           }
       ]
     },
@@ -379,7 +382,8 @@
           "description": "The everyday blade a rider carries. These daggers are used in sparring challenges and various survival situations.",
           "type": "attack",
           "attackvalue": 25, 
-          "pointValue": 25
+          "pointValue": 25,
+          "nicknames" : ["combat dagger", "dagger"]
         },
         {
           "id": "poison dagger",
@@ -425,7 +429,8 @@
           "name": "A Leigheas Serum",
           "description": "A bitter, amber-coloured, medicinal tonic, used to dull pain and treat injuries.",
           "type": "healing",
-          "pointValue": 20
+          "pointValue": 20,
+          "nicknames" : ["serum", "leigheas serum"]
         }
       ]
     },

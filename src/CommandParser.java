@@ -61,6 +61,13 @@ public class CommandParser {
                             itemToTake = item;
                             break;
                         }
+                        for (String nickname : item.getNicknames()) {
+                            if (nickname.equalsIgnoreCase(itemName)) {
+                                itemToTake = item;
+                                break;
+                            }
+                        }
+                        if (itemToTake != null) break;
                     }
                     if (itemToTake != null) {
                         room.removeItem(itemToTake);
@@ -82,6 +89,13 @@ public class CommandParser {
                             itemToDrop = item;
                             break;
                         }
+                        for (String nickname : item.getNicknames()) {
+                            if (nickname.equalsIgnoreCase(itemName)) {
+                                itemToDrop = item;
+                                break;
+                            }
+                        }
+                        if (itemToDrop != null) break;
                     }
                     if (itemToDrop != null) {
                         player.removeItem(itemToDrop);
@@ -481,6 +495,13 @@ public class CommandParser {
                             itemToUse = item;
                             break;
                         }
+                        for (String nickname : item.getNicknames()) {
+                            if (nickname.equalsIgnoreCase(itemName)) {
+                                itemToUse = item;
+                                break;
+                            }
+                        }
+                        if (itemToUse != null) break;
                     }
                     
                     if (itemToUse != null) {

@@ -145,5 +145,9 @@ public class Player {
         return (lanternTurns <=0); 
     }
 
+    public boolean lanternOn(){
+        return lanternOn;
+    }
+
     
 }

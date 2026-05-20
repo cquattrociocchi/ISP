@@ -13,7 +13,6 @@ public class Room {
     private boolean dragonAnnounced = false;
     private boolean dragonSpawned = false;
     private boolean roomEntered = false;
-    private Player p1;
 
 
     public Room(String id, String name, String description, Map<String, String> exits, List<Item> items, List<Person> people) {
@@ -56,8 +55,6 @@ public class Room {
     public List<Person> getPeople() {
         return people; 
     }
-
-   
    
 
     public String getLongDescription(Map<String, Room> rooms) {

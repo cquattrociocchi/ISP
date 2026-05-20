@@ -3,8 +3,6 @@ import java.util.*;
 import com.google.gson.*;
 
 public class RoomLoader {
-    private Player player;
-
     public Map<String, Room> loadRooms(String filePath) {
         Map<String, Room> rooms = new HashMap<>();
         try {
@@ -32,6 +30,7 @@ public class RoomLoader {
                     String itemName = itemObj.get("name").getAsString();
                     String itemDescription = itemObj.get("description").getAsString();
                     String itemType;
+
                 if (itemObj.has("type")) {
                     itemType = itemObj.get("type").getAsString();
                 } else {
@@ -44,8 +43,18 @@ public class RoomLoader {
                 } else {
                     itemPointValue = 0;
                 }
+                String[] itemNicknames;
+                if (itemObj.has("nicknames")) {
+                    JsonArray nicknamesJson = itemObj.getAsJsonArray("nicknames");
+                    itemNicknames = new String[nicknamesJson.size()];
+                    for (int i = 0; i < nicknamesJson.size(); i++) {
+                        itemNicknames[i] = nicknamesJson.get(i).getAsString();
+                    }
+                } else {
+                    itemNicknames = new String[0];
+                }
 
-                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue, 0));
+                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue, 0, itemNicknames));
                 }
 
                 List<Person> people = new ArrayList<>();
@@ -67,9 +76,6 @@ public class RoomLoader {
                                             personSignet, personAttackValue, personGreeting, personDeathMessage));
                         
                 }
-
-                
-
 
             }
 

@@ -8,8 +8,9 @@ public class Item {
     public int pointValue;
     private boolean isPickedUpForFirstTime;
     private Scanner scanner = new Scanner(System.in);
+    private String [] nicknames;
 
-    public Item(String id, String name, String description, String type, int pointValue, int attackValue) {
+    public Item(String id, String name, String description, String type, int pointValue, int attackValue, String [] nicknames) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -17,6 +18,7 @@ public class Item {
         this.attackValue = attackValue;
         this.pointValue = pointValue;
         this.isPickedUpForFirstTime = false;
+        this.nicknames = nicknames;
     }
 
     public String getId() {
@@ -37,6 +39,10 @@ public class Item {
 
     public void useAttackItem() {
         //poison dagger, sword, etc.
+    }
+
+    public String [] getNicknames() {
+        return nicknames;
     }
 
     public void riddle(Room room, Player player) {
