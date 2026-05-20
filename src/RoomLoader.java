@@ -73,7 +73,7 @@ public class RoomLoader {
 
             }
 
-                Room room = new Room(roomId, name, description, exits, items, people, player);
+                Room room = new Room(roomId, name, description, exits, items, people);
                 rooms.put(roomId, room);
             }
         } catch (Exception e) {
