@@ -53,7 +53,7 @@ public class Item {
         if (answer.indexOf("bond") != -1){
             Dragon dragon = room.getDragon(); 
 
-            if (dragon != null && player.getPoints() > 200){ //not sure how many points 
+            if (dragon != null && player.getPoints() > 0){ //not sure how many points 
                 dragon.bondWithPlayer(player);
             } else {
                 System.out.println("There is no dragon here to bond with.");
