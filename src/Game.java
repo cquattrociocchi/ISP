@@ -51,18 +51,19 @@ public class Game {
         if (currentRoom.getId().equals("flight_field") && player.getPoints() < 200){ //crashing because player is null?
             //id = previousRoomId; 
             System.out.println("You need 200 points to enter the flight field.");
-            currentRoom = rooms.get("flight_field"); 
+            currentRoom = rooms.get(player.getPreviousRoomId());
+            player.setCurrentRoomId(player.getPreviousRoomId());
         }
 
-
-        if (currentRoom.getId().equals("parapet_entrance") && !(player.isWearingBoot())){ //crashing because  player is null?
+        if (currentRoom.getId().equals("parapet1") && !(player.isWearingBoot())){ //crashing because  player is null?
             System.out.println("The parapet is too slippery! You will fall without enough grip."); 
             currentRoom = rooms.get("parapet_entrance"); 
         }
 
         if (currentRoom.getId().equals("dorm_stairwell") && !(player.getLanternStatus()) && !(player.lanternOn())){
             System.out.println("You cannot see anything, it is too dark.");
-            currentRoom = rooms.get("dorm_stairwell"); 
+            currentRoom = rooms.get(player.getPreviousRoomId());
+            player.setCurrentRoomId(player.getPreviousRoomId()); 
         }
         }
     }
@@ -71,6 +72,7 @@ public class Game {
         return this.player;
     }
 
+    
 
 
 }

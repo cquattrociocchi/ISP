@@ -149,5 +149,9 @@ public class Player {
         return lanternOn;
     }
 
+    public String getPreviousRoomId() {
+        return previousRoomId; 
+    }
+
     
 }

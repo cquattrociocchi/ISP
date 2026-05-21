@@ -83,6 +83,9 @@ public class Dragon {
 
         
         System.out.println("The " + colour + " " + tail + " lowers its head. " + name + " has bonded with you!");
+        System.out.println("Your bond with " + name + " has earned you 100 points.");
+        System.out.println("You mount " + name + "and take flight, over the threshing grounds. You are now in the flight field."); 
+        
 
         
         player.addPoints(100); 
