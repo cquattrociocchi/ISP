@@ -383,7 +383,7 @@
       "exits": {
         "southeast": "flight_field",
         "northeast": "dragon_rotunda",
-        "west": "battle_brief"
+        "east": "battle_brief"
       },
       "items": [
         {
@@ -523,7 +523,7 @@
       "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
       "exits": {
         "north": "healer_quadrant",
-        "south": "ravinne_tunnel2"
+        "south": "ravine_tunnel2"
       },
       "items": [
       ]
@@ -533,8 +533,8 @@
       "name": "Ravine Tunnel",
       "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
       "exits": {
-        "north": "ravinne_tunnel1",
-        "south": "ravinne_tunnel3"
+        "north": "ravine_tunnel2",
+        "south": "ravine_tunnel2"
       },
       "items": [
       ]
@@ -544,7 +544,7 @@
       "name": "Ravine Tunnel",
       "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
       "exits": {
-        "north": "ravinne_tunnel2",
+        "north": "ravine_tunnel2",
         "south": "dorms"
       },
       "items": [
