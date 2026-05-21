@@ -142,7 +142,8 @@
           "name": "A Small Lantern",
           "description": "A glowing ember burns in the center of the lantern, casting a warm light around it.",
           "type": "utility",
-          "pointValue": 10
+          "pointValue": 10,
+          "nickname" : ["lantern", "small lantern"]
         }
       ]
     },
