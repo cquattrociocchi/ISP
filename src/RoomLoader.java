@@ -68,7 +68,7 @@ public class RoomLoader {
                     String personType = personObj.get("type").getAsString();
                     int personHealth = personObj.get("health").getAsInt();
                     String personSignet = personObj.get("signet").getAsString();
-                    int personAttackValue = personObj.get("attackValue").getAsInt();
+                    int personAttackValue = !personObj.get("attackValue").getAsString().equals("")?personObj.get("attackValue").getAsInt():0;
                     String personGreeting = personObj.get("greeting").getAsString();
                     String personDeathMessage = personObj.get("deathMessage").getAsString();
 
