@@ -67,7 +67,7 @@
       "description": "You are on the stretch of the parapet within the walls of the Rider's Quadrant. The exit to the courtyard is within reach.",
       "exits": {
         "north": "parapet3", 
-        "south": "fourth_wing"
+        "southwest": "fourth_wing"
       },
       "items": []
     },
@@ -132,7 +132,6 @@
       "description": "You are in a narrow dorm stairwell. The stone steps curve tightly upward, and the light is dim. Every sound-your breathing, your movement- echoes throughout the chamber.",
       "exits": {
         "south": "fourth_wing",
-        "down": "dragon_rotunda",
         "up": "dorms"
 
       },
