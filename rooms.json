@@ -114,7 +114,17 @@
         "northwest": "dragon_rotunda",
         "west": "flight_field"
       },
-      "items": []
+      "items": [
+        {
+          "id": "saddle",
+          "name": "Violet's Saddle Harness",
+          "description": "A custom saddle and harness system created for Violet, designed so she can ride Tairn safeely.",
+          "type": "utility",
+          "pointValue": 15,
+          "nicknames": ["saddle", "harness", "saddle harness", "violet's saddle", "violet's harness", "violet's saddle harness"]
+        }
+        
+      ]
     },
 
     "dorm_stairwell": {
@@ -564,6 +574,14 @@
         "west": "library"
       },
       "items": [
+        {
+          "id": "jacket",
+          "name": "Black Flight Jacket ",
+          "description": "A fitted black leather flight jacket, scarred from battle and reinforced for dragon riding.",
+          "type": "utility",
+          "pointValue": 15,
+          "nicknames": ["jacket", "Jacket"]
+        }
       ]
     },
 
@@ -575,6 +593,14 @@
         "south": "commons"
       },
       "items": [
+        {
+          "id": "fable",
+          "name": "The Fables of the Barren",
+          "description": "A proscribed, forbidden book detailing the folklore of venin and wyvern.",
+          "type": "utility",
+          "pointValue": 15,
+          "nicknames": ["fable", "Fables of the Barren", "fables"]
+        }
       ]
     },
 
