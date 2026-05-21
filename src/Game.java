@@ -16,9 +16,13 @@ public class Game {
     public void start() {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
-        System.out.println("You stand at the edge of the parapet of Basgiath War College, the wind rising from the canyon below like a warning.\n" + //
-                        "They told you this place would break you, that only the strongest survive the Riders Quadrant. Looking ahead, at the narrow parapet stretching over open air, you begin to understand why.\n" + //
-                        "Behind you lies the life you knew. Ahead, dragons, death, and a chance at something greater.\n" + //
+        System.out.println(
+                "You stand at the edge of the parapet of Basgiath War College, the wind rising from the canyon below like a warning.\n"
+                        + //
+                        "They told you this place would break you, that only the strongest survive the Riders Quadrant. Looking ahead, at the narrow parapet stretching over open air, you begin to understand why.\n"
+                        + //
+                        "Behind you lies the life you knew. Ahead, dragons, death, and a chance at something greater.\n"
+                        + //
                         "A bell tolls in the distance.\n" + //
                         "It's time to begin.");
         System.out.println();
@@ -33,12 +37,9 @@ public class Game {
             player.setGender(scanner.nextLine());
 
         Room currentRoom = rooms.get(player.getCurrentRoomId());
-        if (currentRoom == null){
+        if (currentRoom == null) {
             currentRoom = rooms.get("parapet_entrance");
         }
-
-        
-
 
         System.out.println(currentRoom.getLongDescription(rooms));
         System.out.println(player.getStats());
@@ -48,31 +49,30 @@ public class Game {
             String input = scanner.nextLine();
             commandParser.parse(input, player, rooms);
 
-        if (currentRoom.getId().equals("flight_field") && player.getPoints() < 200){ //crashing because player is null?
-            //id = previousRoomId; 
-            System.out.println("You need 200 points to enter the flight field.");
-            currentRoom = rooms.get(player.getPreviousRoomId());
-            player.setCurrentRoomId(player.getPreviousRoomId());
-        }
+            if (currentRoom.getId().equals("flight_field") && player.getPoints() < 200) { // crashing because player is
+                                                                                          // null?
+                // id = previousRoomId;
+                System.out.println("You need 200 points to enter the flight field.");
+                currentRoom = rooms.get(player.getPreviousRoomId());
+                player.setCurrentRoomId(player.getPreviousRoomId());
+            }
 
-        if (currentRoom.getId().equals("parapet1") && !(player.isWearingBoot())){ //crashing because  player is null?
-            System.out.println("The parapet is too slippery! You will fall without enough grip."); 
-            currentRoom = rooms.get("parapet_entrance"); 
-        }
+            if (currentRoom.getId().equals("parapet1") && !player.isWearingBoot()) { // crashing because player is
+                                                                                       // null?
+                System.out.println("The parapet is too slippery! You will fall without enough grip.");
+                currentRoom = rooms.get("parapet_entrance");
+            }
 
-        if (currentRoom.getId().equals("dorm_stairwell") && !(player.getLanternStatus()) && !(player.lanternOn())){
-            System.out.println("You cannot see anything, it is too dark.");
-            currentRoom = rooms.get(player.getPreviousRoomId());
-            player.setCurrentRoomId(player.getPreviousRoomId()); 
-        }
+            if (currentRoom.getId().equals("dorm_stairwell") && !(player.getLanternStatus()) && !(player.lanternOn())) {
+                System.out.println("You cannot see anything, it is too dark.");
+                currentRoom = rooms.get(player.getPreviousRoomId());
+                player.setCurrentRoomId(player.getPreviousRoomId());
+            }
         }
     }
 
     public Player getPlayer() {
         return this.player;
     }
-
-    
-
 
 }
