@@ -196,7 +196,7 @@ public class CommandParser {
 
             break;
             
-             case "down":
+            case "down":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("down");
 
@@ -270,7 +270,7 @@ public class CommandParser {
 
             break;
 
-             case "n":
+            case "n":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("north");
                 if (nextRoomId != null) {
@@ -574,25 +574,25 @@ public class CommandParser {
 
             
             
-            case "lantern": {
-                if (words.length < 2){
-                    System.out.println("Use: lantern on/off");
-                    break;
-                }
-
-                if (words[1].equalsIgnoreCase("on")) {
-            player.turnLanternOn();
-                }
-                else if (words[1].equalsIgnoreCase("off")) {
-                    player.turnLanternOff();
-                }
-                else {
-                    System.out.println("Use: lantern on/off");
-                }
-
+        case "lantern": {
+            if (words.length < 2){
+                System.out.println("Use: lantern on/off");
                 break;
             }
-         }
+
+            if (words[1].equalsIgnoreCase("on")) {
+                player.turnLanternOn();
+                }
+            else if (words[1].equalsIgnoreCase("off")) {
+                player.turnLanternOff();
+            }
+            else {
+                System.out.println("Use: lantern on/off");
+            }
+
+            break;
+        }
+    }
            
 
         player.lanternTimer();
