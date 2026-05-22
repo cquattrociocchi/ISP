@@ -11,6 +11,26 @@ public class CommandParser {
             return;
         }
 
+        if (player.getCurrentRoomId().equals("dorm_stairwell") && input.equalsIgnoreCase("up") && !player.getLanternStatus() && !player.lanternOn()) {
+            System.out.println("You cannot see anything, it is too dark."); 
+            return;
+        } 
+
+        if (player.getCurrentRoomId().equals("parapet_entrance") && !player.isWearingBoot() && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
+                                                                                       // null?
+                System.out.println("The parapet is too slippery! You will fall without enough grip.");
+                return;
+        }
+
+         if (player.getCurrentRoomId().equals("flight_field") && player.getPoints() < 200 && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
+                                                                                          // null?
+                // id = previousRoomId;
+                System.out.println("You need 200 points to enter the threshing grounds.");
+                return; 
+            }
+
+        
+
         
 
         String command = words[0];
