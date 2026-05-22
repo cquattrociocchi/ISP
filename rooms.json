@@ -184,7 +184,7 @@
 
     "flight_field": {
       "name": "Flight Field",
-      "description":"You are outside. ... []",
+      "description":"You are outside on the flight field, an uneven launch and landing zone for dragons. ",
       "exits": {
         "south": "threshing_grounds1",
         "east": "first_wing",
@@ -297,6 +297,14 @@
       },
 
       "items": [
+        {
+          "id": "wood",
+          "name": "pile of wood",
+          "description": "A small pile of chopped wood.",
+          "type": "utility",
+          "pointValue": 5,
+          "nicknames": ["wood", "Wood", "pile of wood"]
+        }
       ]
     },
 

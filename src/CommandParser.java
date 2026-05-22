@@ -22,7 +22,7 @@ public class CommandParser {
                 return;
         }
 
-         if (player.getCurrentRoomId().equals("flight_field") && player.getPoints() < 200 && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
+         if (player.getCurrentRoomId().equals("flight_field") && player.getPoints() < 100 && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
                                                                                           // null?
                 // id = previousRoomId;
                 System.out.println("You need 200 points to enter the threshing grounds.");
