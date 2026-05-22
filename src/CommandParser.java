@@ -199,7 +199,7 @@ public class CommandParser {
 
             break; 
 
-
+            case "u":
             case "up":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("up");
@@ -216,6 +216,7 @@ public class CommandParser {
 
             break;
             
+            case "d": 
             case "down":
                 currentRoom = rooms.get(player.getCurrentRoomId());
                 nextRoomId = currentRoom.getExits().get("down");
@@ -231,6 +232,9 @@ public class CommandParser {
                 }
 
             break;
+
+            
+
 
             
             

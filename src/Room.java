@@ -116,6 +116,7 @@ public class Room {
         if (!people.isEmpty()) {
             for (int i = 0; i < people.size(); i++) {
                 sb.append(people.get(i).getDescription()).append("\n");
+                sb.append(people.get(i).getName()).append(" is here. ");
             }
         }
 
@@ -143,6 +144,8 @@ public class Room {
             
         }
         return sb.toString();
+
+        
     }
 
 
@@ -153,3 +156,13 @@ public class Room {
     }
     
 
+//    for (String direction : exits.keySet()){
+//                 Room neighbor = rooms.get(exits.get(direction));
+//                 sb.append(direction).append(": ");
+//                 if (neighbor != null) {                           // new
+//                     sb.append(neighbor.getName());                // new
+//                 } else {                                          // new
+//                     sb.append(exits.get(direction));              // new
+//                 }                                                 // new
+//                 sb.append("\n"); 
+//             }

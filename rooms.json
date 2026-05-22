@@ -438,7 +438,8 @@
       "description": "The air smells sharply of herbs and clean linen, with cots lining the room.",
       "exits": {
         "east": "turret",
-        "west": "bell_tower"
+        "west": "bell_tower",
+        "south": "ravine_tunnel1"
         
       },
       "items": [
@@ -541,8 +542,8 @@
       "name": "Ravine Tunnel",
       "description": "You stand in the narrow tunnel crossing the ravine, where damp stone walls close in, a distant rush of wind echoing through the space.",
       "exits": {
-        "north": "ravine_tunnel2",
-        "south": "ravine_tunnel2"
+        "north": "ravine_tunnel1",
+        "south": "ravine_tunnel3"
       },
       "items": [
       ]
@@ -617,7 +618,8 @@
       "description": "You are in the commons, a bustling area where students gather to socialize and study.",
       "exits": {
         "north": "library",
-        "south": "gathering_hall"
+        "south": "gathering_hall",
+        "west": "weapon_tactics"
       },
       "items": [
       ]

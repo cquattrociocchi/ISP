@@ -83,7 +83,9 @@ public class Dragon {
 
         
         System.out.println("The " + colour + " " + tail + " lowers its head. " + name + " has bonded with you!");
+        System.out.println("");
         System.out.println("Your bond with " + name + " has earned you 100 points.");
+        System.out.println("" ); 
         System.out.println("You step onto " + name + "'s' scales and feel it immediately, alive, aware of me.\n\n" +
                         "The bond snaps tight in my mind, not words, just presence. *Now.*\n\n" +
                         "You launch.\n\n" +
