@@ -655,6 +655,14 @@
         "south": "battle_brief"
       },
       "items": [
+         {
+          "id": "dragon guide",
+          "name": "How to Interact with Dragons",
+          "description": "A book detailing the art of communicating with and bonding with dragons.",
+          "type": "utility",
+          "pointValue": 15,
+          "nicknames": ["dragon guide", "Dragon Guide"]
+        }
       ]
       }
     }

@@ -136,8 +136,31 @@ public class Item {
                 } else {
                     System.out.println("You don't have enough points to view the threshing grounds map. Explore more and earn points to unlock it.");
                 }
+   
                 
-            } else {
+            } 
+
+            else if (item.getId().equals("book of riders")){
+                System.out.println("Book of Riders: \n\n" +
+                    "Violet Sorrengail - Tairn and Adarna \n" + 
+                    "Xaden Riorson - Sgaeyl \n" +
+                    "Dain Aetos - Cath \n" +
+                    "Rhiannon Matthias - Feirge \n" +
+                    "Liam Mairi - Deigh \n" +
+                    "Mira Sorrengail - Teine \n" +
+                    "Jack Barlowe - Baide");
+                
+            }
+
+            else if (item.getId().equals("dragon guide")){
+                System.out.println(
+                    "\"Dragons respect courage, not fear.\n" +
+                    "Stand your ground and speak carefully.\""
+                    );
+            }
+            
+            
+            else {
                 System.out.println("You can't use the " + item.getName() + " right now.");
             }
         
