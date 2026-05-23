@@ -391,7 +391,7 @@
       "exits": {
         "southeast": "flight_field",
         "northeast": "dragon_rotunda",
-        "east": "battle_brief"
+        "west": "battle_brief"
       },
       "items": [
         {
@@ -418,7 +418,7 @@
       "name": "Battle Brief",
       "description": "A pair of sturdy riding gloves, worn smooth by use.",
       "exits": {
-        "west": "sparring_gym",
+        "east": "sparring_gym",
         "north": "history_classroom"
       },
       "items": [

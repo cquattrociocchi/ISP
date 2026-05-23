@@ -107,7 +107,36 @@ public class Item {
             } else if (item.getId().equals("gloves")) {
                 System.out.println("You put on the Pair of Riding Gloves. Your hands are protected and your grip is enhanced, allowing you to climb and hold onto surfaces more securely.");
             } else if (item.getId().equals("map")) {
-                System.out.println("You unfold the Map. It reveals the layout of the parapet and surrounding areas, helping you navigate and find hidden paths.");
+
+                if (player.getPoints() > 100){
+                    System.out.println("You unfold the Map. It reveals the layout of the threshing grounds.");
+
+                    System.out.println(
+                "====================================\n" +
+                "      THRESHING GROUNDS MAP\n" +
+                "====================================\n" +
+                "\n" +
+                "                [1]\n" +
+                "                  |\n" +
+                "                  |\n" +
+                "        [2]---------------[3]\n" +
+                "         |               / |\n" +
+                "         |              / |\n" +
+                "         |            /    |\n" +
+                "       [11]        [4]     |\n" +
+                "          \\                |\n" +
+                "           \\               |\n" +
+                "           [9]            [6]\n" +
+                "             \\           /   \\\n" +
+                "              \\         /     \\\n" +
+                "              [10]    [5]----[7]\n" +
+                "                 \\          /\n" +
+                "                   \\      /\n" +
+                "                      [8]  DRAGONS\n" ); 
+                } else {
+                    System.out.println("You don't have enough points to view the threshing grounds map. Explore more and earn points to unlock it.");
+                }
+                
             } else {
                 System.out.println("You can't use the " + item.getName() + " right now.");
             }

@@ -25,7 +25,7 @@ public class CommandParser {
          if (player.getCurrentRoomId().equals("flight_field") && player.getPoints() < 100 && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
                                                                                           // null?
                 // id = previousRoomId;
-                System.out.println("You need 200 points to enter the threshing grounds.");
+                System.out.println("You need 100 points to enter the threshing grounds.");
                 return; 
             }
 
@@ -69,6 +69,8 @@ public class CommandParser {
                     }
                 }
                 break;
+
+            case "pickup":
             case "take":
                 if (words.length < 2) {
                     System.out.println("Take what?");
