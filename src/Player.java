@@ -14,6 +14,7 @@ public class Player {
     private boolean lanternOn = false;
     private int lanternTurns = 20; 
     private boolean roomStatus = false;
+    private Signet signet;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -22,6 +23,7 @@ public class Player {
         this.points = 0;
         this.health = 20;
         this.alive = true;
+        this.signet = new Signet();
     }
 
     public void setName(String name) {
@@ -168,10 +170,9 @@ public class Player {
     }
 
     public void createSignet() {
-        Signet signet = new Signet();
-
         if (signet.getSignetName().equals("Inntinnsic")){
-            System.out.println("Inntinnsic signets are fobidden. You have been killed");
+            System.out.println("Inntinnsic signets are fobidden. You have been killed.");
+            setAlive(false);
         } else {
             System.out.println("Your signet is: " + signet.getSignetName() + " with an attack value of " + signet.getAttackValue() + ". Use it wisely in battles!");
             System.out.println("To to use your signet, type your signet name."); 

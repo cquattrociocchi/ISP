@@ -50,12 +50,9 @@ public class Game {
             commandParser.parse(input, player, rooms);
 
             currentRoom = rooms.get(player.getCurrentRoomId());
-
-
-            
-
-            
         }
+
+        System.out.println("Game over.");
     }
 
     public Player getPlayer() {

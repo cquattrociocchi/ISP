@@ -518,11 +518,11 @@
 
         {
           "id": "signet book",
-          "name": "How to Manifest Signets",
+          "name": "How to Manifest Signets Book",
           "description": "A book detailing the art of manifesting signets.",
           "type": "utility",
           "pointValue": 50,
-          "nicknames": ["signet book", "How to Manifest Signets", "book", "Signet Book"]
+          "nicknames": ["signet book", "How to Manifest Signets Book", "book", "Signet Book"]
         }
       ]
     },
