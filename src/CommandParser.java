@@ -27,7 +27,12 @@ public class CommandParser {
                 // id = previousRoomId;
                 System.out.println("You need 100 points to enter the threshing grounds.");
                 return; 
-            }
+        }
+
+        if (player.getCurrentRoomId().equals("general_office") && player.getRoomStatus() == false && input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west")){
+                System.out.println("Type in the password to unlock the door to the secret vault, all words hyphenated together:  _ _ -_ _ _ _ _ _ _ _ -_ _ _"); 
+                return; 
+        }
 
         
 
@@ -618,15 +623,17 @@ public class CommandParser {
 
             break;
         }
-    }
-           
 
-        player.lanternTimer();
+        case "WE-REMEMBER-ALL":
+        case "we-remember-all": {
+            player.setRoom(true); 
+            System.out.println("You have unlocked the door to the secret vault."); 
+        }
 
         }
 
     }
-    
+}
 
     
 

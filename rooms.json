@@ -64,7 +64,7 @@
 
     "parapet4": {
       "name": "Parapet",
-      "description": "You are on the stretch of the parapet within the walls of the Rider's Quadrant. The exit to the courtyard is within reach.",
+      "description": "You are on the stretch of the parapet within the walls of the Rider's Quadrant.The exit to the courtyard is within reach.",
       "exits": {
         "north": "parapet3", 
         "southwest": "fourth_wing"
@@ -86,7 +86,7 @@
 
     "third_wing": {
       "name": "Courtyard",
-      "description": "You stand among the Third Wing formation. The noise is quieter, and controlled, with riders practicing drills and maneuvers.",
+      "description": "You stand among the Third Wing formation. The noise is quieter, and controlled, with riders practicing drills and maneuvers. You see a message, [1. WE], etched into the stone ground.",
       "exits": {
         "north": "fourth_wing",
         "south": "second_wing",
@@ -300,7 +300,7 @@
         {
           "id": "wood",
           "name": "pile of wood",
-          "description": "A small pile of chopped wood.",
+          "description": "A small pile of chopped wood. A faint outline of the word [3. ALL] is burned into one of the logs.",
           "type": "utility",
           "pointValue": 5,
           "nicknames": ["wood", "Wood", "pile of wood"]
@@ -477,9 +477,12 @@
       "name": "General Sorrengail's Office",
       "description": "You stand in General Sorrengail's office, a precise and controlled space.",
       "exits": {
-        "south": "admin_building"
+        "south": "admin_building",
+        "west": "secret vault",
+        "east": "infantry_quadrant"
       },
       "items": [
+       
       ],
 
       "people": [
@@ -496,19 +499,37 @@
         }
       ]
     },
+
+    "secret vault": {
+      "name": "Secret Vault",
+      "description": "You have found the secret vault, where the complete map of the Basgiath War College is hidden. Congrats!",
+      "exits": {
+        "east": "general_office"
+      },
+      "items": [
+         {
+          "id": "bwc map",
+          "name": "Basgiath War College Map",
+          "description": "You have found the ULTIMATE map of Basgiath War College, with every location and secret passage marked. To use this map, type use bwc map.",
+          "type": "utility",
+          "pointValue": 50,
+          "nicknames": ["bwc map", "Basgiath War College Map", "map", "BWC Map"]
+        }
+      ]
+    },
+
     "infantry_quadrant": {
       "name": "Infantry Quadrant",
       "description": "You are in the infantry quadrant, where the steady rhythm of drills and weight of steel empahsizes the physicality of the riders' training.",
       "exits": {
-        "west": "general_office",
-        "east": "tower_column"
+        "west": "general_office"
       },
       "items": [
       ]
     },
     "tower_column": {
       "name": "Tower Column",
-      "description": "",
+      "description": "A narrow stone column spirals upward, and you see the entire college spread out below you. [2. REMEMBER] is carved along the stone walls, reminding you of your purpose here.",
       "exits": {
         "west": "infantry_quadrant",
         "south": "scribe_quadrant"

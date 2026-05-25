@@ -55,7 +55,7 @@ public class Room {
     public List<Person> getPeople() {
         return people; 
     }
-   
+
 
     public String getLongDescription(Map<String, Room> rooms) {
         StringBuilder sb = new StringBuilder();

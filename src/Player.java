@@ -13,6 +13,7 @@ public class Player {
     private boolean wearingBoot = false;
     private boolean lanternOn = false;
     private int lanternTurns = 20; 
+    private boolean roomStatus = false;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -152,6 +153,15 @@ public class Player {
     public String getPreviousRoomId() {
         return previousRoomId; 
     }
+
+    public void setRoom (boolean isRoomLocked) {
+        roomStatus = isRoomLocked;
+    }
+    
+    public boolean getRoomStatus() {
+        return roomStatus;
+    }
+    
 
     
 }

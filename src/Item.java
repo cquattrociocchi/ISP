@@ -135,14 +135,68 @@ public class Item {
                 "                 \\          /\n" +
                 "                   \\      /\n" +
                 "                      [8]  DRAGONS\n" ); 
-                } else {
+                } 
+                
+                else {
                     System.out.println("You don't have enough points to view the threshing grounds map. Explore more and earn points to unlock it.");
                 }
    
                 
             } 
 
+            else if (item.getId().equals("bwc map")){
+                System.out.println("You unfold the Map: "); 
+
+                System.out.println(
+                    "====================================\n" +
+                    "        BASGIATH MAP (OVERVIEW)\n" +
+                    "====================================\n" +
+                    "\n");
+                
+                String map = """
+                        
+                        [ Secret Vault ] -- [ General Sovereign's Office ] ---- [ Infantry Quadrant ] ---- [ Tower Column ]
+                                                        |                         |                         |
+                                                [ Admin Building ]                |                 [ Scribe Quadrant ]
+                                                        |                         |                         |
+                                                    [ Bell Tower ] ----------- [ Healer Quadrant ] ---- [ Turret ]
+                                                                                |                         |
+                                                                            [ Tunnel 1 ]         [ Parapet Entrance ]
+                                                                                |                         |
+                        ============================== RAVINE =====================|=========================|========================
+                                                                                |                         |
+                                                                            [ Tunnel 2 ]             [ Parapet 1 ]
+                                                                                |                         |
+                                                                            [ Tunnel 3 ]             [ Parapet 2 ]
+                                                                                |                         |
+                                                                    ---------------------------      [ Parapet 3 ]
+                                                                    |            |           |             |
+                                                                [ Library ]   [ Dorms ]   [ Down Stairwell ]   [ Parapet 4 ]
+                                                                    |            |           |              |
+                                                                [ Commons ]  [ Dragon Rotunda ] ---- [ Fourth Wing ]
+                                                                    |            |                        |
+                                                        [ Weapon Tactics ]   [ Sparring Gym ]       [ Third Wing ]
+                                                                    |            |                        |
+                                                            [ History Class ]    |                    [ Second Wing ]
+                                                                    |            ---------------            |
+                                                                [ Battle Brief ]                 |    [ First Wing ]
+                                                                                |                |
+                                                                            [ Gathering Hall ]   | 
+                                                                                |                | 
+                                                                            [ Sparring Gym ]     |
+                                                                                |                |
+                                                                            [ Flight Field ] -----
+                        """;
+
+                        System.out.println(map);
+                        System.out.println("To access a map of the threshing grounds, using the map in your inventory.");
+                      
+
+            }
+
             else if (item.getId().equals("book of riders")){
+                
+                
                 System.out.println("Book of Riders: \n\n" +
                     "Violet Sorrengail - Tairn and Adarna \n" + 
                     "Xaden Riorson - Sgaeyl \n" +
