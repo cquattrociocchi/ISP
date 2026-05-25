@@ -688,11 +688,11 @@
       "items": [
          {
           "id": "dragon guide",
-          "name": "How to Interact with Dragons",
+          "name": "How to Interact with Dragons Book",
           "description": "A book detailing the art of communicating with and bonding with dragons.",
           "type": "utility",
           "pointValue": 15,
-          "nicknames": ["dragon guide", "Dragon Guide"]
+          "nicknames": ["dragon guide", "Dragon Guide", "book"]
         }
       ]
       }
