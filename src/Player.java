@@ -171,10 +171,10 @@ public class Player {
         Signet signet = new Signet();
 
         if (signet.getSignetName().equals("Inntinnsic")){
-                System.out.println("Inntinnsic signets are fobidden. You have been killed");
-            } else {
-                System.out.println("Your signet is: " + signet.getSignetName() + " with an attack value of " + signet.getAttackValue() + ". Use it wisely in battles!");
-                System.out.println("To to use your signet, type your signet name."); 
+            System.out.println("Inntinnsic signets are fobidden. You have been killed");
+        } else {
+            System.out.println("Your signet is: " + signet.getSignetName() + " with an attack value of " + signet.getAttackValue() + ". Use it wisely in battles!");
+            System.out.println("To to use your signet, type your signet name."); 
         }
     }
     
