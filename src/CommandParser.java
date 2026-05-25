@@ -625,14 +625,14 @@ public class CommandParser {
         }
 
         case "WE-REMEMBER-ALL":
-        case "we-remember-all": {
+        case "we-remember-all":
             player.setRoom(true); 
             System.out.println("You have unlocked the door to the secret vault."); 
             break;
         }
 
         case "EMPYREAN":
-        case "empyrean": {
+        case "empyrean":
             player.createSignet(); 
             break;
         }

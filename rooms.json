@@ -531,7 +531,8 @@
       "name": "Infantry Quadrant",
       "description": "You are in the infantry quadrant, where the steady rhythm of drills and weight of steel empahsizes the physicality of the riders' training.",
       "exits": {
-        "west": "general_office"
+        "west": "general_office",
+        "east": "tower_column"
       },
       "items": [
       ]
