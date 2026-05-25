@@ -15,6 +15,7 @@ public class Player {
     private int lanternTurns = 20; 
     private boolean roomStatus = false;
     private Signet signet;
+    private boolean signetCreated = false;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -179,5 +180,16 @@ public class Player {
         }
     }
     
+    public void setSignet(){
+        signetCreated = true;
+    }
+
+    public boolean getSignetCreated(){
+        return signetCreated;
+    }
+
+    public Signet getSignet() {
+        return signet;
+    }
     
 }

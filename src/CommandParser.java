@@ -629,11 +629,17 @@ public class CommandParser {
             player.setRoom(true); 
             System.out.println("You have unlocked the door to the secret vault."); 
             break;
-        }
+        
 
         case "EMPYREAN":
         case "empyrean":
-            player.createSignet(); 
+            if (!(player.getSignetCreated())){
+                player.createSignet(); 
+            }
+
+            else {
+                System.out.println("You have already created your signet. Your signet is: " + player.getSignet().getSignetName() + " with an attack value of " + player.getSignet().getAttackValue() + "." ); 
+            }
             break;
         }
 
@@ -664,9 +670,6 @@ public class CommandParser {
 
 
     }
-}
-
-
 
     
 
