@@ -102,6 +102,11 @@ public class Player {
         return alive;
     }
 
+    public void setAlive(boolean status){
+        alive = status;
+
+    }
+
     public String getStats() {
         StringBuilder sb = new StringBuilder();
         sb.append("You have ").append(points).append(" points.\n");
@@ -160,6 +165,17 @@ public class Player {
     
     public boolean getRoomStatus() {
         return roomStatus;
+    }
+
+    public void createSignet() {
+        Signet signet = new Signet();
+
+        if (signet.getSignetName().equals("Inntinnsic")){
+                System.out.println("Inntinnsic signets are fobidden. You have been killed");
+            } else {
+                System.out.println("Your signet is: " + signet.getSignetName() + " with an attack value of " + signet.getAttackValue() + ". Use it wisely in battles!");
+                System.out.println("To to use your signet, type your signet name."); 
+        }
     }
     
 

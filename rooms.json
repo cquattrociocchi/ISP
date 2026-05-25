@@ -514,6 +514,15 @@
           "type": "utility",
           "pointValue": 50,
           "nicknames": ["bwc map", "Basgiath War College Map", "map", "BWC Map"]
+        },
+
+        {
+          "id": "signet book",
+          "name": "How to Manifest Signets",
+          "description": "A book detailing the art of manifesting signets.",
+          "type": "utility",
+          "pointValue": 50,
+          "nicknames": ["signet book", "How to Manifest Signets", "book", "Signet Book"]
         }
       ]
     },

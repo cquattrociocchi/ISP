@@ -9,6 +9,7 @@ public class Item {
     private boolean isPickedUpForFirstTime;
     private Scanner scanner = new Scanner(System.in);
     private String [] nicknames;
+    private Signet signet; 
 
     public Item(String id, String name, String description, String type, int pointValue, int attackValue, String [] nicknames) {
         this.id = id;
@@ -108,7 +109,15 @@ public class Item {
 
             } else if (item.getId().equals("gloves")) {
                 System.out.println("You put on the Pair of Riding Gloves. Your hands are protected and your grip is enhanced, allowing you to climb and hold onto surfaces more securely.");
-            } else if (item.getId().equals("map")) {
+            
+            }else if (item.getId().equals("signet book")){
+                System.out.println("To manifest your signet's power, type EMPYREAN."); 
+
+            }
+            
+            
+            
+             else if (item.getId().equals("map")) {
 
                 if (player.getPoints() > 100){
                     System.out.println("You unfold the Map. It reveals the layout of the threshing grounds.");

@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CommandParser {
-    
+
 
     public void parse(String input, Player player, Map<String, Room> rooms) {
         String[] words = input.trim().toLowerCase().split("\\s+");
@@ -630,10 +630,41 @@ public class CommandParser {
             System.out.println("You have unlocked the door to the secret vault."); 
         }
 
+        case "EMPYREAN":
+        case "empyrean": {
+            player.createSignet(); 
         }
+
+            
+    }
+
+        // case "Ice":
+        // case "ice": {
+        //     if (signet.getSignetName().equals("Ice")){
+        //         System.out.println("You use your Ice signet, icicles shoot freely.");
+        //     }
+        // }
+
+        // case "lightning":
+        // case "Lightning": {
+        //     if (signet.getSignetName().equals("Lightning")){
+        //         System.out.println("You use your Lightning signet, fiery lightning cracks around you.");
+        //     }
+        // }
+
+        // case "Shadows":
+        // case "shadows": {
+        //     if (signet.getSignetName().equals("Shadow")){
+        //         System.out.println("You use your Shadow signet, enveloping you in darkness.");
+        //     }
+        // }
+
+
 
     }
 }
+
+
 
     
 

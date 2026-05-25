@@ -30,4 +30,12 @@ public class Signet {
     public void attack(Person person) {
         person.deductHealth(attackValue);
     }
+
+    public String getSignetName() {
+        return name;
+    }
+
+    public int getAttackValue() {
+        return attackValue;
+    }
 }
