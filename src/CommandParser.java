@@ -629,13 +629,13 @@ public class CommandParser {
             player.setRoom(true); 
             System.out.println("You have unlocked the door to the secret vault."); 
             break;
-        }
+        
 
         case "EMPYREAN":
         case "empyrean":
             player.createSignet(); 
             break;
-        }
+        
 
             
     }
