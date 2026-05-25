@@ -66,6 +66,10 @@ public class Dragon {
         return colour;
     }
 
+    public boolean isBonded() {
+        return bonded;
+    }
+
     
     public void bondWithPlayer(Player player) {
         if (bonded){

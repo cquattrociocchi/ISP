@@ -102,7 +102,9 @@ public class Item {
                 player.enableBoot(); 
 
             } else if (item.getId().equals("lantern")) {
-                System.out.println("You light the Small Lantern. To turn on and off your lantern, type: lantern on or latern off.");
+                player.turnLanternOn();
+                System.out.println(" To turn on and off your lantern, type: lantern on or latern off.");
+                
 
             } else if (item.getId().equals("gloves")) {
                 System.out.println("You put on the Pair of Riding Gloves. Your hands are protected and your grip is enhanced, allowing you to climb and hold onto surfaces more securely.");
