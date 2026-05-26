@@ -38,4 +38,5 @@ public class Signet {
     public int getAttackValue() {
         return attackValue;
     }
+
 }
