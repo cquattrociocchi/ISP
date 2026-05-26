@@ -9,9 +9,10 @@ public class Item {
     private boolean isPickedUpForFirstTime;
     private Scanner scanner = new Scanner(System.in);
     private String [] nicknames;
+    private int weight;
     private Signet signet; 
 
-    public Item(String id, String name, String description, String type, int pointValue, int attackValue, String [] nicknames) {
+    public Item(String id, String name, String description, String type, int pointValue, int attackValue, String [] nicknames, int weight) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -20,6 +21,7 @@ public class Item {
         this.pointValue = pointValue;
         this.isPickedUpForFirstTime = false;
         this.nicknames = nicknames;
+        this.weight = weight;
     }
 
     public String getId() {
@@ -44,6 +46,10 @@ public class Item {
 
     public String [] getNicknames() {
         return nicknames;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
     public void riddle(Room room, Player player) {

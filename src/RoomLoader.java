@@ -54,7 +54,15 @@ public class RoomLoader {
                     itemNicknames = new String[0];
                 }
 
-                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue, 0, itemNicknames));
+                int itemWeight;
+                if (itemObj.has("weight")) {
+                    itemWeight = itemObj.get("weight").getAsInt();
+                }
+                else {
+                    itemWeight = 0;
+                }
+
+                items.add(new Item(itemId, itemName, itemDescription, itemType, itemPointValue, 0, itemNicknames, itemWeight));
                 }
 
                 List<Person> people = new ArrayList<>();

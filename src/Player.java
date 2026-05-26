@@ -5,6 +5,7 @@ public class Player {
     private String currentRoomId;
     private String previousRoomId;
     private List<Item> inventory;
+    private int inventoryWeight;
     private String name;
     private String gender;
     private int points;
@@ -23,6 +24,7 @@ public class Player {
         this.currentRoomId = startingRoomId;
         this.previousRoomId = null;
         this.inventory = new ArrayList<>();
+        this.inventoryWeight = 0;
         this.points = 0;
         this.health = 20;
         this.alive = true;
@@ -61,11 +63,17 @@ public class Player {
     }
 
     public void addItem(Item item) {
-        inventory.add(item);
-        if (item.isFirstPickUp()) {
-            item.markAsPickedUp();
-            addPoints(item.getPointValue());
-            System.out.println("Congrats, you earned " + item.getPointValue() + " points! " + " Total: " + points + " points.");
+        if (item.getWeight() + inventoryWeight > 50) {
+            System.out.println("Your inventory is full.");
+        }
+        
+        else {
+            inventory.add(item);
+            if (item.isFirstPickUp()) {
+                item.markAsPickedUp();
+                addPoints(item.getPointValue());
+                System.out.println("Congrats, you earned " + item.getPointValue() + " points! " + " Total: " + points + " points.");
+            }
         }
     }
 
@@ -75,6 +83,10 @@ public class Player {
 
     public List<Item> getInventory() {
         return inventory;
+    }
+
+    public int getInventoryWeight() {
+        return inventoryWeight;
     }
 
     public void addPoints(int amount) {

@@ -14,7 +14,8 @@
           "type": "utility",
           "attackValue": 15,
           "pointValue": 15,
-          "nicknames": ["boot", "Boot"]
+          "nicknames": ["boot", "Boot"],
+          "weight": "5"
         }
       ],
       "people": [
@@ -121,7 +122,8 @@
           "description": "A custom saddle and harness system created for Violet, designed so she can ride Tairn safeely.",
           "type": "utility",
           "pointValue": 15,
-          "nicknames": ["saddle", "harness", "saddle harness", "violet's saddle", "violet's harness", "violet's saddle harness"]
+          "nicknames": ["saddle", "harness", "saddle harness", "violet's saddle", "violet's harness", "violet's saddle harness"],
+          "weight": "10"
         }
         
       ]
@@ -142,7 +144,8 @@
           "description": "A glowing ember burns in the center of the lantern, casting a warm light around it.",
           "type": "utility",
           "pointValue": 10,
-          "nicknames" : ["lantern", "small lantern"]
+          "nicknames" : ["lantern", "small lantern"],
+          "weight": "5"
         }
       ]
     },
@@ -165,7 +168,8 @@
           "description": "A pair of sturdy riding gloves, worn smooth by use.",
           "utility": "utility",
           "pointValue": 15,
-          "nicknames": ["gloves", "pair of gloves", "pair of riding gloves", "riding gloves"]
+          "nicknames": ["gloves", "pair of gloves", "pair of riding gloves", "riding gloves"],
+          "weight": "1"
         }
       ]
     },
@@ -199,7 +203,8 @@
           "description": "roll-keeper's Book of Riders where bonds between dragon and rider are recorded.",
           "type": "utility",
           "pointValue": 25,
-          "nicknames": ["book", "book of riders", "riders book"]
+          "nicknames": ["book", "book of riders", "riders book"],
+          "weight": 2
         }
       ]
     },
@@ -269,7 +274,8 @@
             "type": "riddle",
             "description": "A tattered scroll, its surface filled with ancient symbols. You stare closely, and the symbols seem to shift and rearrange themselves: \n\n\"I am built, not born. \n I connect two as one. \n Break me and all is lost. \n What am I?\"",
             "pointValue": 45,
-            "nicknames": ["tattered scroll", "scroll"]
+            "nicknames": ["tattered scroll", "scroll"],
+            "weight": 1
           }
       ]
     },
@@ -303,7 +309,8 @@
           "description": "A small pile of chopped wood. A faint outline of the word [3. ALL] is burned into one of the logs.",
           "type": "utility",
           "pointValue": 5,
-          "nicknames": ["wood", "Wood", "pile of wood"]
+          "nicknames": ["wood", "Wood", "pile of wood"],
+          "weight": 10
         }
       ]
     },
@@ -391,7 +398,8 @@
       "exits": {
         "southeast": "flight_field",
         "northeast": "dragon_rotunda",
-        "west": "battle_brief"
+        "west": "battle_brief",
+        "north": "gathering_hall"
       },
       "items": [
         {
@@ -401,7 +409,8 @@
           "type": "attack",
           "attackvalue": 25, 
           "pointValue": 25,
-          "nicknames" : ["combat dagger", "dagger"]
+          "nicknames" : ["combat dagger", "dagger"],
+          "weight": 3
         },
         {
           "id": "poison dagger",
@@ -409,7 +418,9 @@
           "description": "Standard blade coated in poision. It is a valuable and dangerous asset in sparring challenges.",
           "type": "attack",
           "attackvalue": 35, 
-          "pointValue": 35
+          "pointValue": 35,
+          "nicknames": ["poison dagger", "dagger"],
+          "weight": 3
         }
       ]
     },
@@ -427,7 +438,8 @@
           "name": "Map",
           "description": "You found a paper map of Basgiath College. It will help you with navigation.",
           "type": "utility",
-          "pointValue": 15
+          "pointValue": 15,
+          "weight": 2
         }
       ]
     },
@@ -449,7 +461,8 @@
           "description": "A bitter, amber-coloured, medicinal tonic, used to dull pain and treat injuries.",
           "type": "healing",
           "pointValue": 20,
-          "nicknames" : ["serum", "leigheas serum"]
+          "nicknames" : ["serum", "leigheas serum"],
+          "weight": 1
         }
       ]
     },
@@ -513,7 +526,8 @@
           "description": "You have found the ULTIMATE map of Basgiath War College, with every location and secret passage marked. To use this map, type use bwc map.",
           "type": "utility",
           "pointValue": 50,
-          "nicknames": ["bwc map", "Basgiath War College Map", "map", "BWC Map"]
+          "nicknames": ["bwc map", "Basgiath War College Map", "map", "BWC Map"],
+          "weight": 2
         },
 
         {
@@ -522,7 +536,8 @@
           "description": "A book detailing the art of manifesting signets.",
           "type": "utility",
           "pointValue": 50,
-          "nicknames": ["signet book", "How to Manifest Signets Book", "book", "Signet Book"]
+          "nicknames": ["signet book", "How to Manifest Signets Book", "book", "Signet Book"],
+          "weight": 2
         }
       ]
     },
@@ -592,12 +607,13 @@
        "people": [
         {
           "id": "sloane",
-          "name": "Sloane Mairi ",
+          "name": "Sloane Mairi",
           "description": "As you walk through the tunnel, you see a cadet with a glowing relic etched into their skin, winding around their arm. As you look closer, you recognize the blond hair and sky blue eyes.",
           "type": "rider",
           "health": "22",
           "signet": "siphon",
           "attackValue": "20",
+          "nickname": "sloane",
           "greeting": "Hey! Get out of my way.",
           "deathMessage": ""
         }
@@ -620,7 +636,8 @@
           "description": "A fitted black leather flight jacket, scarred from battle and reinforced for dragon riding.",
           "type": "utility",
           "pointValue": 15,
-          "nicknames": ["jacket", "Jacket"]
+          "nicknames": ["jacket", "Jacket"],
+          "weight": 5
         }
       ]
     },
@@ -639,7 +656,8 @@
           "description": "A proscribed, forbidden book detailing the folklore of venin and wyvern.",
           "type": "utility",
           "pointValue": 15,
-          "nicknames": ["fable", "Fables of the Barren", "fables"]
+          "nicknames": ["fable", "Fables of the Barren", "fables"],
+          "weight": 2
         }
       ]
     },
@@ -692,7 +710,8 @@
           "description": "A book detailing the art of communicating with and bonding with dragons.",
           "type": "utility",
           "pointValue": 15,
-          "nicknames": ["dragon guide", "Dragon Guide", "book"]
+          "nicknames": ["dragon guide", "Dragon Guide", "book"],
+          "weight": "2"
         }
       ]
       }

@@ -1,0 +1,2 @@
+- say wrong if password is wrong
+- be in the room to say password
