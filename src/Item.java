@@ -100,7 +100,7 @@ public class Item {
     public void useUtilityItem(Player player, Item item) {
             if (item.getId().equals("boot")) {
                 System.out.println("You put on the Left Rider Boot. You can now step onto the parapet, the grip improved.");
-                player.enableBoot(); 
+                player.setBootStatus(true); 
 
             } else if (item.getId().equals("lantern")) {
                 player.turnLanternOn();

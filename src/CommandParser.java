@@ -100,6 +100,11 @@ public class CommandParser {
                         room.removeItem(itemToTake);
                         player.addItem(itemToTake);
                         System.out.println("You take the " + itemToTake.getName() + ".");
+
+                        if (itemToTake.getId().equals("lantern")) {
+                            player.setLanternStatus(true);
+                        }
+
                     } else {
                         System.out.println("There is no " + itemName + " here.");
                     }
@@ -114,21 +119,32 @@ public class CommandParser {
                     for (Item item : player.getInventory()) {
                         if (item.getName().equalsIgnoreCase(itemName)) {
                             itemToDrop = item;
-                            break;
                         }
                         for (String nickname : item.getNicknames()) {
                             if (nickname.equalsIgnoreCase(itemName)) {
                                 itemToDrop = item;
-                                break;
                             }
                         }
-                        if (itemToDrop != null) break;
                     }
                     if (itemToDrop != null) {
                         player.removeItem(itemToDrop);
                         Room room = rooms.get(player.getCurrentRoomId());
                         room.addItem(itemToDrop);
                         System.out.println("You drop the " + itemToDrop.getName() + ".");
+                        
+                        if (itemToDrop.getId().equals("boot")) {
+                            player.setBootStatus(false);
+                        }
+
+                        if (itemToDrop.getId().equals("signet book")) {
+                            player.setBook(false);
+                        }
+
+                        if (itemToDrop.getId().equals("lantern")) {
+                            player.turnLanternOff();
+                            player.setLanternStatus(false);
+                        }
+
                     } else {
                         System.out.println("You don't have a " + itemName + ".");
                     }
@@ -606,21 +622,26 @@ public class CommandParser {
             
             
         case "lantern": {
-            if (words.length < 2){
-                System.out.println("Use: lantern on/off");
-                break;
-            }
-
-            if (words[1].equalsIgnoreCase("on")) {
-                player.turnLanternOn();
+            if (player.getLantern()) {
+                if (words.length < 2){
+                    System.out.println("Use: lantern on/off");
+                    break;
                 }
-            else if (words[1].equalsIgnoreCase("off")) {
-                player.turnLanternOff();
-            }
-            else {
-                System.out.println("Use: lantern on/off");
+
+                if (words[1].equalsIgnoreCase("on")) {
+                    player.turnLanternOn();
+                    }
+                else if (words[1].equalsIgnoreCase("off")) {
+                    player.turnLanternOff();
+                }
+                else {
+                    System.out.println("Use: lantern on/off");
+                }
             }
 
+            else {
+                System.out.println("There is no lantern in your inventory.");
+            }
             break;
         }
 

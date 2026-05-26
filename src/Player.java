@@ -11,6 +11,7 @@ public class Player {
     private int health;
     private boolean alive;
     private boolean wearingBoot = false;
+    private boolean hasLantern = false;
     private boolean lanternOn = false;
     private int lanternTurns = 20; 
     private boolean hasBook = false;
@@ -122,8 +123,16 @@ public class Player {
         return wearingBoot; 
     }
 
-    public void enableBoot(){
-        wearingBoot = true; 
+    public void setBootStatus(boolean status){
+        wearingBoot = status; 
+    }
+
+    public void setLanternStatus(boolean status) {
+        hasLantern = status;
+    }
+
+    public boolean getLantern() {
+        return hasLantern;
     }
 
     public void turnLanternOn() {
