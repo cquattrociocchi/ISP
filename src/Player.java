@@ -13,6 +13,7 @@ public class Player {
     private boolean wearingBoot = false;
     private boolean lanternOn = false;
     private int lanternTurns = 20; 
+    private boolean hasBook = false;
     private boolean roomStatus = false;
     private Signet signet;
     private boolean signetCreated = false;
@@ -156,6 +157,14 @@ public class Player {
 
     public boolean lanternOn(){
         return lanternOn;
+    }
+
+    public void setBook(boolean status) {
+        hasBook = status;
+    }
+
+    public boolean getBookStatus() {
+        return hasBook;
     }
 
     public String getPreviousRoomId() {

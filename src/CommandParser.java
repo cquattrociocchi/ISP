@@ -633,18 +633,22 @@ public class CommandParser {
 
         case "EMPYREAN":
         case "empyrean":
-            if (!(player.getSignetCreated())){
-                player.createSignet(); 
+            if (player.getBookStatus()) {
+                if (!(player.getSignetCreated())){
+                    player.createSignet(); 
+                }
+
+                else {
+                    System.out.println("You have already created your signet. Your signet is: " + player.getSignet().getSignetName() + " with an attack value of " + player.getSignet().getAttackValue() + "." ); 
+                }
             }
 
             else {
-                System.out.println("You have already created your signet. Your signet is: " + player.getSignet().getSignetName() + " with an attack value of " + player.getSignet().getAttackValue() + "." ); 
+                System.out.println("I don't understand that command.");
             }
+
             break;
         }
-
-            
-    }
 
         // case "Ice":
         // case "ice": {
@@ -670,6 +674,4 @@ public class CommandParser {
 
 
     }
-
-    
-
+}

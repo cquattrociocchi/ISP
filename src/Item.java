@@ -112,7 +112,7 @@ public class Item {
             
             }else if (item.getId().equals("signet book")){
                 System.out.println("To manifest your signet's power, type EMPYREAN."); 
-
+                player.setBook(true);
             }
             
             
