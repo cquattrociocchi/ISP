@@ -99,7 +99,7 @@ public class CommandParser {
                     if (itemToTake != null) {
                         room.removeItem(itemToTake);
                         player.addItem(itemToTake);
-                        System.out.println("You take the " + itemToTake.getName() + ".");
+                        System.out.println("You take the " + itemToTake.getName().toLowerCase() + ".");
 
                         if (itemToTake.getId().equals("lantern")) {
                             player.setLanternStatus(true);
@@ -669,30 +669,27 @@ public class CommandParser {
             }
 
             break;
+
+        case "Ice":
+        case "ice": {
+            if (player.getSignet().getSignetName().equals("Ice")){
+                System.out.println("You use your Ice signet, icicles shoot freely.");
+            }
         }
 
-        // case "Ice":
-        // case "ice": {
-        //     if (signet.getSignetName().equals("Ice")){
-        //         System.out.println("You use your Ice signet, icicles shoot freely.");
-        //     }
-        // }
+        case "lightning":
+        case "Lightning": {
+            if (player.getSignet().getSignetName().equals("Lightning")){
+                System.out.println("You use your Lightning signet, fiery lightning cracks around you.");
+            }
+        }
 
-        // case "lightning":
-        // case "Lightning": {
-        //     if (signet.getSignetName().equals("Lightning")){
-        //         System.out.println("You use your Lightning signet, fiery lightning cracks around you.");
-        //     }
-        // }
-
-        // case "Shadows":
-        // case "shadows": {
-        //     if (signet.getSignetName().equals("Shadow")){
-        //         System.out.println("You use your Shadow signet, enveloping you in darkness.");
-        //     }
-        // }
-
-
-
+        case "Shadows":
+        case "shadows": {
+            if (player.getSignet().getSignetName().equals("Shadow")){
+                System.out.println("You use your Shadow signet, enveloping you in darkness.");
+            }
+        }
+        }
     }
 }
