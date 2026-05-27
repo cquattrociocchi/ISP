@@ -19,6 +19,8 @@ public class Player {
     private boolean roomStatus = false;
     private Signet signet;
     private boolean signetCreated = false;
+    private boolean isPlayerBonded = false;
+    private String dragonsColor;
 
     public Player(String startingRoomId) {
         this.currentRoomId = startingRoomId;
@@ -220,6 +222,22 @@ public class Player {
 
     public Signet getSignet() {
         return signet;
+    }
+
+    public boolean isPlayerBonded() {
+        return isPlayerBonded;
+    }
+
+    public void setIsPlayerBonded(boolean bonded) {
+        this.isPlayerBonded = bonded;
+    }
+
+    public void setDragonsColor(String color) {
+        this.dragonsColor = color;
+    }
+
+    public String getDragonsColor() {
+        return dragonsColor;
     }
     
 }

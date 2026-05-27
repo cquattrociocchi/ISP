@@ -68,9 +68,9 @@ public class Room {
             dragonSpawned = true;
         }
         if (dragon != null && this.id.equals("threshing_grounds8") && !dragonAnnounced) {
-            String dragonDescription = " A " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
-                if (dragon.getColour().substring(0,1).indexOf("aeiou") >= 0) {
-                    dragonDescription = " An " + dragon.getColour() + " " + dragon.getTail() + " flies toward you."; 
+            String dragonDescription = " A " + dragon.getColor() + " " + dragon.getTail() + " flies toward you."; 
+                if (dragon.getColor().substring(0,1).indexOf("aeiou") >= 0) {
+                    dragonDescription = " An " + dragon.getColor() + " " + dragon.getTail() + " flies toward you."; 
         }
 
 

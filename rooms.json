@@ -140,7 +140,7 @@
       "items": [
         {
           "id": "lantern",
-          "name": "A Small Lantern",
+          "name": "Small Lantern",
           "description": "A glowing ember burns in the center of the lantern, casting a warm light around it.",
           "type": "utility",
           "pointValue": 10,

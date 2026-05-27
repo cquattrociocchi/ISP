@@ -62,6 +62,8 @@ public class Item {
 
             if (dragon != null && player.getPoints() > 0){ //not sure how many points 
                 dragon.bondWithPlayer(player);
+                player.setIsPlayerBonded(true);
+                player.setDragonsColor(dragon.getColor());
             } else {
                 System.out.println("There is no dragon here to bond with.");
             }
@@ -252,14 +254,6 @@ public class Item {
 
 }
 
-// left Rider Boot: 10
-// small lantern: 10
-// pair of riding gloves: 15
-// map: 15 
-// leigheas serum: 20
-// combat dagger: 25
-// book of riders: 25
-// poison dagger: 35
-// tattered scroll: 45
+
 
 

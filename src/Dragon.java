@@ -62,7 +62,7 @@ public class Dragon {
     public String getTail(){
         return tail;
     }
-    public String getColour() {
+    public String getColor() {
         return colour;
     }
 

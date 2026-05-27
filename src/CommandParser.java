@@ -722,6 +722,74 @@ public class CommandParser {
                 System.out.println("You use your Shadow signet, enveloping you in darkness.");
             }
         }
+
+        case "talk":
+            if (player.isPlayerBonded()) {
+                if (player.getDragonsColor().equals("black")) {
+                    double probDialogue = Math.random();
+                    if (probDialogue < 0.33) {
+                        System.out.println("Two eyes open in the darkness. \n \"I have watched civilizations burn to ash and be forgotten. You are a flicker.\" \n The eyes close.");
+                    }
+                    else if (probDialogue < 0.66) {
+                        System.out.println("The shadows deepen around you. \"Something follows you that you cannot see.\" Silence reclaims the room.");
+                    } else {
+                        System.out.println("A long stillness settles. \"You are more interesting than most.\" The darkness folds back in and the dragon is gone.");
+                    }
+                }
+                if (player.getDragonsColor().equals("blue")) {
+                    double probDialogue = Math.random();
+                    if (probDialogue < 0.33) {
+                        System.out.println("Static crackles across your skin. \"Your fear has a frequency. I find it fascinating.\" The electricity fades.");
+                    }
+                    else if (probDialogue < 0.66) {
+                        System.out.println("Lightning flickers between its teeth. \"The storm last night said your name.\" Its eyes go dim and distant.");
+                    } else {
+                        System.out.println("A sharp crack fills the air. \"I already knew you were coming.\" The blue light dims and it turns away.");
+                    }
+                }
+                if (player.getDragonsColor().equals("green")) {
+                    double probDialogue = Math.random();
+                    if (probDialogue < 0.33) {
+                        System.out.println("It watches you from the shadows. \"You lied to someone recently. I always know.\" It looks away slowly.");
+                    } else if (probDialogue < 0.66) {
+                        System.out.println("A slow blink. \"You have more enemies than you realize.\" It settles its head down and closes its eyes.");
+                    } else {
+                        System.out.println("It tilts its head. \"I had your survival at sixty-forty this week. I am adjusting upward.\" It says nothing more.");
+                    }
+                }
+                if (player.getDragonsColor().equals("red")) {
+                    double probDialogue = Math.random();
+                    if (probDialogue < 0.33) {
+                        System.out.println("A blast of scorching air hits your face. \"You are still standing. Good.\" It turns its back to you.");
+                    } else if (probDialogue < 0.66) {
+                        System.out.println("A growl like crumbling stone. \"You fought poorly today. Do not repeat it.\" Its eyes close with finality.");
+                    } else {
+                        System.out.println("It bares its teeth. \"I have seen a hundred riders. Few lasted.\" It lowers its head and goes still.");
+                    }
+                }
+                if (player.getDragonsColor().equals("orange")) {
+                    double probDialogue = Math.random();
+                    if (probDialogue < 0.33) {
+                        System.out.println("It stops pacing abruptly. \"Something is wrong today. I do not know what yet.\" It curls tightly and closes its eyes.");
+                    } else if (probDialogue < 0.66) {
+                        System.out.println("Embers drift from its scales. \"You matter to me. I will not say it again.\" It turns away.");
+                    } else {
+                        System.out.println("A burst of flame toward the ceiling. \"Stay close tomorrow.\" It settles into silence.");
+                    }
+                }
+                if (player.getDragonsColor().equals("brown")) {
+                    double probDialogue = Math.random();
+                    if (probDialogue < 0.33) {
+                        System.out.println("A low rumble fills the space. \"They underestimate you. Use it.\" It closes its eyes slowly.");
+                    } else if (probDialogue < 0.66) {
+                        System.out.println("It nudges you gently. \"I do not say this to many riders. You will be alright.\" It goes still.");
+                    } else {
+                        System.out.println("Warmth radiates from its scales. \"You look tired. Rest.\" Its breathing deepens and it sleeps.");
+                    }
+                }   
+            } else {
+                System.out.println("You are not bonded with a dragon.");
+            }
         }
     }
 }
