@@ -34,6 +34,38 @@ public class CommandParser {
                 return; 
         }
 
+        if (player.getCurrentRoomId().equals("parapet1") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+	        System.out.println("You have stepped off the parapet and died."); 
+            player.setAlive(false);
+            return;
+        }
+
+         if (player.getCurrentRoomId().equals("parapet2") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+	        System.out.println("You have stepped off the parapet and died."); 
+            player.setAlive(false);
+            return;
+        }
+
+         if (player.getCurrentRoomId().equals("parapet3") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+	        System.out.println("You have stepped off the parapet and died."); 
+            player.setAlive(false);
+            return;
+        }
+
+         if (player.getCurrentRoomId().equals("parapet4") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+	        System.out.println("You have stepped off the parapet and died."); 
+            player.setAlive(false);
+            return;
+        }
+
+         if (player.getCurrentRoomId().equals("ravine_tunnel2") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+	        System.out.println("You have jumped off the ravine tunnel bridge and died."); 
+            player.setAlive(false);
+            return;
+        }
+	 
+
+
         
 
         

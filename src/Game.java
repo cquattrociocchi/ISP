@@ -27,12 +27,15 @@ public class Game {
                         "It's time to begin.");
         System.out.println();
 
+        System.out.println("Available commands: look, directions [n/s/e/w], take [item], drop [item], use [item], inventory, stats, help");
+        System.out.println();
+
         System.out.println("What's your name?");
         while (player.getName() == null)
             player.setName(scanner.nextLine());
         System.out.println();
 
-        System.out.println("What's your gender? (m/f)");
+        System.out.println("What's your gender? (m/f/other)");
         while (player.getGender() == null)
             player.setGender(scanner.nextLine());
 

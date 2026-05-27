@@ -43,7 +43,7 @@ public class Player {
     }
 
     public void setGender(String gender) {
-        if (gender.equals("m") || gender.equals("f"))
+        if (gender.equals("m") || gender.equals("f") || gender.equals("other"))
             this.gender = gender;
         else
             System.out.println("I don't understand that command.");
