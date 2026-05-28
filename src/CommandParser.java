@@ -16,49 +16,49 @@ public class CommandParser {
             return;
         } 
 
-        if (player.getCurrentRoomId().equals("parapet_entrance") && !player.isWearingBoot() && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
+        if (player.getCurrentRoomId().equals("parapet_entrance") && !player.isWearingBoot() && (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south"))) { // crashing because player is
                                                                                        // null?
                 System.out.println("The parapet is too slippery! You will fall without enough grip.");
                 return;
         }
 
-         if (player.getCurrentRoomId().equals("flight_field") && player.getPoints() < 100 && input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south")) { // crashing because player is
+         if (player.getCurrentRoomId().equals("flight_field") && player.getPoints() < 100 && (input.equalsIgnoreCase("s") || input.equalsIgnoreCase("south"))) { // crashing because player is
                                                                                           // null?
                 // id = previousRoomId;
                 System.out.println("You need 100 points to enter the threshing grounds.");
                 return; 
         }
 
-        if (player.getCurrentRoomId().equals("general_office") && player.getRoomStatus() == false && input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west")){
+         if (player.getCurrentRoomId().equals("general_office") && player.getRoomStatus() == false && (input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west"))){
                 System.out.println("Type in the password to unlock the door to the secret vault, all words hyphenated together:  _ _ -_ _ _ _ _ _ _ _ -_ _ _"); 
                 return; 
         }
 
-        if (player.getCurrentRoomId().equals("parapet1") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+         if (player.getCurrentRoomId().equals("parapet1") && (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east"))){
 	        System.out.println("You have stepped off the parapet and died."); 
             player.setAlive(false);
             return;
         }
 
-         if (player.getCurrentRoomId().equals("parapet2") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+         if (player.getCurrentRoomId().equals("parapet2") && (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east"))){
 	        System.out.println("You have stepped off the parapet and died."); 
             player.setAlive(false);
             return;
         }
 
-         if (player.getCurrentRoomId().equals("parapet3") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+         if (player.getCurrentRoomId().equals("parapet3") && (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east"))){
 	        System.out.println("You have stepped off the parapet and died."); 
             player.setAlive(false);
             return;
         }
 
-         if (player.getCurrentRoomId().equals("parapet4") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+         if (player.getCurrentRoomId().equals("parapet4") && (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east"))){
 	        System.out.println("You have stepped off the parapet and died."); 
             player.setAlive(false);
             return;
         }
 
-         if (player.getCurrentRoomId().equals("ravine_tunnel2") && input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east")){
+         if (player.getCurrentRoomId().equals("ravine_tunnel2") && (input.equalsIgnoreCase("e") || input.equalsIgnoreCase("w") || input.equalsIgnoreCase("west") || input.equalsIgnoreCase("east"))){
 	        System.out.println("You have jumped off the ravine tunnel bridge and died."); 
             player.setAlive(false);
             return;

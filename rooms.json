@@ -388,6 +388,16 @@
       },
 
       "items": [
+        {
+          "id": "crossbow",
+          "name": "Crossbow",
+          "description": "A ranged weapon used for combat.",
+          "type": "attack",
+          "attackvalue": 25, 
+          "pointValue": 25,
+          "nicknames" : ["crossbow", "ranged weapon"],
+          "weight": 3
+        }
       ]
     },
 
@@ -440,7 +450,20 @@
           "type": "utility",
           "pointValue": 15,
           "weight": 2
+        },
+
+        {
+          "id": "alloy dagger",
+          "name": "Alloy Dagger",
+          "description": "These blades feature a unique medallion, but when imbued with magical energy, they are the only weapons capable of killing venin.",
+          "type": "attack",
+          "attackvalue": 25, 
+          "pointValue": 25,
+          "nicknames" : ["alloy dagger", "dagger"],
+          "weight": 3
         }
+
+
       ]
     },
 
@@ -462,6 +485,24 @@
           "type": "healing",
           "pointValue": 20,
           "nicknames" : ["serum", "leigheas serum"],
+          "weight": 1
+        }, 
+         {
+          "id": "arinment",
+          "name": "Arinment",
+          "description": "A plant resembling regular mint, but aids in sleep and healing.",
+          "type": "healing",
+          "pointValue": 20,
+          "nicknames" : ["arinment", "plant"],
+          "weight": 1
+        }, 
+         {
+          "id": "dragon-blocking serum",
+          "name": "A Dragon-Blocking Serum",
+          "description": "A pungent, earthy elixir, devloped by Navarre leadership to sever the mental bonds between riders and their dragons.",
+          "type": "healing",
+          "pointValue": 20,
+          "nicknames" : ["serum", "dragon-blocking serum"],
           "weight": 1
         }
       ]
@@ -581,6 +622,7 @@
         "south": "ravine_tunnel2"
       },
       "items": [
+        
       ]
     },
 

@@ -98,10 +98,24 @@ public class Item {
         return pointValue;
     }
     public void useHealingItem(Player player, Item item) {
-        player.addHealth(10); 
+        if (item.getId().equals("dragon-blocking serum")) {
+            if (player.isPlayerBonded()) {
+                player.deductHealth(10);
+                System.out.println("You used the dragon blocking serum. You lost 10 health points!");
+            }
 
-        System.out.println("You used" + item.getName() + "and restored 10 health points! Current health: " + player.getHealth());
+            else {
+                System.out.println("You cannot use that item right now.");
+            }
+        }
 
+        else {
+            player.addHealth(10);
+            System.out.println("You used" + item.getName() + "and restored 10 health points! Current health: " + player.getHealth());
+
+        }
+
+        
         //potion, bandage, etc. 
     }
 
