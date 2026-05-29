@@ -239,5 +239,6 @@ public class Player {
     public String getDragonsColor() {
         return dragonsColor;
     }
+
     
 }

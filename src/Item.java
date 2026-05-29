@@ -111,7 +111,7 @@ public class Item {
 
         else {
             player.addHealth(10);
-            System.out.println("You used" + item.getName() + "and restored 10 health points! Current health: " + player.getHealth());
+            System.out.println("You used " + item.getName() + " and restored 10 health points! Current health: " + player.getHealth());
 
         }
 
@@ -156,7 +156,7 @@ public class Item {
                 "         |               / |\n" +
                 "         |              / |\n" +
                 "         |            /    |\n" +
-                "       [11]        [4]     |\n" +
+                "       [11]  [4] SCROLL (NEEDED TO BOND WITH DRAGON)    |\n" +
                 "          \\                |\n" +
                 "           \\               |\n" +
                 "           [9]            [6]\n" +

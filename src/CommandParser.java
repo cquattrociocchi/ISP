@@ -750,11 +750,11 @@ public class CommandParser {
                 if (player.getDragonsColor().equals("green")) {
                     double probDialogue = Math.random();
                     if (probDialogue < 0.33) {
-                        System.out.println("It watches you from the shadows. \"You lied to someone recently. I always know.\" It looks away slowly.");
+                        System.out.println("Your dragon watches you from the shadows. \"You lied to someone recently. I always know.\" It looks away slowly.");
                     } else if (probDialogue < 0.66) {
                         System.out.println("A slow blink. \"You have more enemies than you realize.\" It settles its head down and closes its eyes.");
                     } else {
-                        System.out.println("It tilts its head. \"I had your survival at sixty-forty this week. I am adjusting upward.\" It says nothing more.");
+                        System.out.println("Your dragon tilts its head. \"I had your survival at sixty-forty this week. I am adjusting upward.\" It says nothing more.");
                     }
                 }
                 if (player.getDragonsColor().equals("red")) {
@@ -764,13 +764,13 @@ public class CommandParser {
                     } else if (probDialogue < 0.66) {
                         System.out.println("A growl like crumbling stone. \"You fought poorly today. Do not repeat it.\" Its eyes close with finality.");
                     } else {
-                        System.out.println("It bares its teeth. \"I have seen a hundred riders. Few lasted.\" It lowers its head and goes still.");
+                        System.out.println("Your dragon bares its teeth. \"I have seen a hundred riders. Few lasted.\" It lowers its head and goes still.");
                     }
                 }
                 if (player.getDragonsColor().equals("orange")) {
                     double probDialogue = Math.random();
                     if (probDialogue < 0.33) {
-                        System.out.println("It stops pacing abruptly. \"Something is wrong today. I do not know what yet.\" It curls tightly and closes its eyes.");
+                        System.out.println("Your dragon stops pacing abruptly. \"Something is wrong today. I do not know what yet.\" It curls tightly and closes its eyes.");
                     } else if (probDialogue < 0.66) {
                         System.out.println("Embers drift from its scales. \"You matter to me. I will not say it again.\" It turns away.");
                     } else {
@@ -790,6 +790,18 @@ public class CommandParser {
             } else {
                 System.out.println("You are not bonded with a dragon.");
             }
-        }
+        
+    
+
+    case "stats":
+    case "points":
+    case "statistics": 
+        System.out.println(player.getStats());
+        break;
+        
     }
+
+
+
+}
 }

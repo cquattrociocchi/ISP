@@ -53,6 +53,15 @@ public class Game {
             commandParser.parse(input, player, rooms);
 
             currentRoom = rooms.get(player.getCurrentRoomId());
+
+            if (player.getPoints() >= 560 && player.isPlayerBonded() && player.getHealth() > 0 && player.getSignetCreated()) {
+                System.out.println("Congratulations " + player.getName() + "! You have oficially become an accomlished rider of Basgiath War College.");
+                System.out.println("============ FINAL RESULTS ============"); 
+                System.out.println("Total points: " + player.getPoints());
+                System.out.println("Total health: " + player.getHealth());
+                System.out.println("Against impossible odds, you have navigated the complex map, completed all quests, and you have bonded with your dragon and survived the Riders Quadrant. \nYour courage, wits, and determination have earned you a place among Navarre's elite riders. \nThank you for playing!");
+                break;
+            }
         }
 
         System.out.println("Game over.");
